@@ -1,6 +1,20 @@
-#easy_admin:
-#    entities:
-#        # List the entity class name you want to manage
-#        - App\Entity\Product
-#        - App\Entity\Category
-#        - App\Entity\User
+easy_admin:
+    entities:
+        User:
+            class: 'App\Entity\User'
+            label: app.menu.users
+            list:
+                fields:
+                    - { property: 'id', label: '#' }
+                    - { property: 'email', label: 'admin.users.email' }
+                    - { property: 'enabled', label: 'admin.users.enabled' }
+            edit:
+                title: 'admin.users.edit'
+                fields:
+                    - { property: 'email', type: 'email', label: 'admin.users.email' }
+                    - { property: 'plainPassword', type: 'password', label: 'admin.users.password' }
+            new:
+                title: 'admin.users.new'
+                fields:
+                    - { property: 'email', type: 'email', label: 'admin.users.email' }
+                    - { property: 'plainPassword', type: 'password', label: 'admin.users.password' }
