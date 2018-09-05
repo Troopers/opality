@@ -32,7 +32,7 @@ security:
                 use_forward: false
                 failure_path: /login
                 oauth_user_provider:
-                    service: hwi_oauth.user.provider
+                    service: App\Security\GitlabUserProvider
 
             # activate different ways to authenticate
 
