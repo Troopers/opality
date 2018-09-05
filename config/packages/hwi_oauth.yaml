@@ -1,0 +1,15 @@
+hwi_oauth:
+    # list of names of the firewalls in which this bundle is active, this setting MUST be set
+    firewall_names: [main]
+    resource_owners:
+        gitlab:
+            type:               oauth2
+            client_id:          '%env(resolve:GITLAB_CLIENT_ID)%'
+            client_secret:      '%env(resolve:GITLAB_CLIENT_SECRET)%'
+            access_token_url:   '%env(resolve:GITLAB_DOMAIN)%/oauth/token'
+            authorization_url:  '%env(resolve:GITLAB_DOMAIN)%/oauth/authorize'
+            infos_url:          '%env(resolve:GITLAB_DOMAIN)%/api/v3/user'
+            paths:
+                identifier: id
+                nickname:   name
+                realname:   name
