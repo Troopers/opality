@@ -34,3 +34,7 @@ services:
         class: App\EventSubscriber\UserPasswordEncoderSubscriber
         tags:
             - { name: doctrine.event_subscriber, connection: default }
+
+    App\Translation\EasyAdminTranslationExtractor:
+        tags:
+            - { name: jms_translation.file_visitor }
