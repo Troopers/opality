@@ -95,6 +95,15 @@
     "egulias/email-validator": {
         "version": "2.1.5"
     },
+    "fresh/doctrine-enum-bundle": {
+        "version": "6.0",
+        "recipe": {
+            "repo": "github.com/symfony/recipes-contrib",
+            "branch": "master",
+            "version": "6.0",
+            "ref": "fab86661c13bc12e4f14f706c86af09912d55bfb"
+        }
+    },
     "gedmo/doctrine-extensions": {
         "version": "v2.4.36"
     },
@@ -118,6 +127,9 @@
     },
     "jdorn/sql-formatter": {
         "version": "v1.2.17"
+    },
+    "jms/translation-bundle": {
+        "version": "1.4.3"
     },
     "nelmio/cors-bundle": {
         "version": "1.5",
