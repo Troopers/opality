@@ -1,20 +1,41 @@
 easy_admin:
     entities:
+        Responsibility:
+            class: 'App\Entity\Responsibility'
+            label: 'admin.responsibility'
+            list:
+                title: 'admin.responsibility'
+                fields:
+                    - { property: 'id', label: 'admin.responsibility.id' }
+                    - { property: 'name', label: 'admin.responsibility.name' }
+                    - { property: 'criticality', label: 'admin.responsibility.criticality' }
+                    - { property: 'enabled', label: 'admin.responsibility.enabled' }
+            form:
+                fields:
+                    - { property: 'name', label: 'admin.responsibility.name' }
+                    - { property: 'description', label: 'admin.responsibility.description' }
+                    - { property: 'criticality', label: 'admin.responsibility.criticality', type: 'App\Form\Type\CriticalityType' }
+                    - { property: 'enabled', label: 'admin.responsibility.enabled' }
+            edit:
+                title: 'admin.edit'
+            new:
+                title: 'admin.new'
+
         User:
             class: 'App\Entity\User'
-            label: app.menu.users
+            label: 'admin.user'
             list:
+                title: 'admin.user'
                 fields:
-                    - { property: 'id', label: '#' }
-                    - { property: 'email', label: 'admin.users.email' }
-                    - { property: 'enabled', label: 'admin.users.enabled' }
+                    - { property: 'id', label: 'admin.user.id' }
+                    - { property: 'email', label: 'admin.user.email' }
+                    - { property: 'enabled', label: 'admin.user.enabled' }
+            form:
+                title: 'admin.new'
+                fields:
+                    - { property: 'email', type: 'email', label: 'admin.user.email' }
+                    - { property: 'plainPassword', type: 'password', label: 'admin.user.plainPassword' }
             edit:
-                title: 'admin.users.edit'
-                fields:
-                    - { property: 'email', type: 'email', label: 'admin.users.email' }
-                    - { property: 'plainPassword', type: 'password', label: 'admin.users.password' }
+                title: 'admin.edit'
             new:
-                title: 'admin.users.new'
-                fields:
-                    - { property: 'email', type: 'email', label: 'admin.users.email' }
-                    - { property: 'plainPassword', type: 'password', label: 'admin.users.password' }
+                title: 'admin.new'

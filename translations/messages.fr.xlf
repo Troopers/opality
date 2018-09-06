@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:jms="urn:jms:translation" version="1.2">
+  <file date="2018-09-06T21:32:33Z" source-language="en" target-language="fr" datatype="plaintext" original="not.available">
+    <header>
+      <tool tool-id="JMSTranslationBundle" tool-name="JMSTranslationBundle" tool-version="1.1.0-DEV"/>
+      <note>The source node in most cases contains the sample message as written by the developer. If it looks like a dot-delimitted string such as "form.label.firstname", then the developer has not provided a default message.</note>
+    </header>
+    <body>
+      <trans-unit id="b577ca8f4be857b71df2bdeb83271036a59b9179" resname="admin.edit">
+        <source>admin.edit</source>
+        <target>Modifier</target>
+        <jms:reference-file>easy_admin.yaml</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="0a8ba0dbcaddd2b93a63cd48affb14be447cad48" resname="admin.level.critical.label">
+        <source>admin.level.critical.label</source>
+        <target>Critique</target>
+      </trans-unit>
+      <trans-unit id="c051d133ec45862f5696d64ff18f3ede81f7c406" resname="admin.level.medium.label">
+        <source>admin.level.medium.label</source>
+        <target>Moyen</target>
+      </trans-unit>
+      <trans-unit id="6da2a10829493b27429190fbdbabd1f7d575e0ec" resname="admin.level.minor.label">
+        <source>admin.level.minor.label</source>
+        <target>Mineur</target>
+      </trans-unit>
+      <trans-unit id="e0a682b6ab893f251fa816ffad10d94670d68aa5" resname="admin.new">
+        <source>admin.new</source>
+        <target>Nouveau</target>
+        <jms:reference-file>easy_admin.yaml</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="942d7e84959c1e11e3acd580f102a94d38e3049c" resname="admin.responsibility">
+        <source>admin.responsibility</source>
+        <target>Responsabilités</target>
+        <jms:reference-file>easy_admin.yaml</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="b326aa5a40d311629a410fe1eff1756cd03eb2eb" resname="admin.responsibility.criticality">
+        <source>admin.responsibility.criticality</source>
+        <target>Criticité</target>
+        <jms:reference-file>easy_admin.yaml</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="a2160ee1458ff42af95bb9f91f5f24abf9133b7f" resname="admin.responsibility.description">
+        <source>admin.responsibility.description</source>
+        <target>Description</target>
+        <jms:reference-file>easy_admin.yaml</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="beffec217d28694a59b3dc7b409b841ade42fa49" resname="admin.responsibility.enabled">
+        <source>admin.responsibility.enabled</source>
+        <target>Activé</target>
+        <jms:reference-file>easy_admin.yaml</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="a2651968c1967f9f8ae5024768085c1b5b3db17a" resname="admin.responsibility.id">
+        <source>admin.responsibility.id</source>
+        <target>#</target>
+        <jms:reference-file>easy_admin.yaml</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="16dae1353414e5296d8c12521922398df9afcb4d" resname="admin.responsibility.name">
+        <source>admin.responsibility.name</source>
+        <target>Nom</target>
+        <jms:reference-file>easy_admin.yaml</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="1d43af5cfdb67ab0c787c1c405faad9e7b7a59ef" resname="admin.user">
+        <source>admin.user</source>
+        <target>Utilisateurs</target>
+        <jms:reference-file>easy_admin.yaml</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="94a8030a7a724ebcfc5ead663cdde19d6bfcf2a5" resname="admin.user.email">
+        <source>admin.user.email</source>
+        <target>Email</target>
+        <jms:reference-file>easy_admin.yaml</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="20f30e2637dcd14127049d49f3320da57f324349" resname="admin.user.enabled">
+        <source>admin.user.enabled</source>
+        <target>Activé</target>
+        <jms:reference-file>easy_admin.yaml</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="40439544c9a6bccb868e9c3b1c191311c6c5b11b" resname="admin.user.id">
+        <source>admin.user.id</source>
+        <target>#</target>
+        <jms:reference-file>easy_admin.yaml</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="2e5cfc466b15da537899638afe5994929b981154" resname="admin.user.plainPassword">
+        <source>admin.user.plainPassword</source>
+        <target>Mot de passe</target>
+        <jms:reference-file>easy_admin.yaml</jms:reference-file>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>
