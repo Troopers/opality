@@ -11,6 +11,7 @@
         "guzzlehttp/psr7": "^1.4",
         "hwi/oauth-bundle": "^0.6.3",
         "jms/translation-bundle": "^1.4",
+        "liip/imagine-bundle": "^2.1",
         "php-http/guzzle6-adapter": "^1.1",
         "php-http/httplug-bundle": "^1.11",
         "psr/http-message": "^1.0",
@@ -21,6 +22,7 @@
         "symfony/flex": "^1.1",
         "symfony/framework-bundle": "*",
         "symfony/maker-bundle": "^1.6",
+        "symfony/monolog-bundle": "^3.3",
         "symfony/orm-pack": "^1.0",
         "symfony/swiftmailer-bundle": "^3.2",
         "symfony/yaml": "*"

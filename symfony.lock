@@ -125,11 +125,26 @@
             "ref": "20cacc9b2da49d96ea55c8a8dd31324c5be88bc9"
         }
     },
+    "imagine/imagine": {
+        "version": "v0.7.1"
+    },
     "jdorn/sql-formatter": {
         "version": "v1.2.17"
     },
     "jms/translation-bundle": {
         "version": "1.4.3"
+    },
+    "liip/imagine-bundle": {
+        "version": "1.8",
+        "recipe": {
+            "repo": "github.com/symfony/recipes-contrib",
+            "branch": "master",
+            "version": "1.8",
+            "ref": "7f6676627c1ceeeee204553d24a0545d5f918b7b"
+        }
+    },
+    "monolog/monolog": {
+        "version": "1.23.0"
     },
     "nelmio/cors-bundle": {
         "version": "1.5",
@@ -329,6 +344,18 @@
             "ref": "fadbfe33303a76e25cb63401050439aa9b1a9c7f"
         }
     },
+    "symfony/monolog-bridge": {
+        "version": "v4.1.4"
+    },
+    "symfony/monolog-bundle": {
+        "version": "3.1",
+        "recipe": {
+            "repo": "github.com/symfony/recipes",
+            "branch": "master",
+            "version": "3.1",
+            "ref": "18ebf5a940573a20de06f9c4060101eeb438cf3d"
+        }
+    },
     "symfony/options-resolver": {
         "version": "v4.1.4"
     },
@@ -343,6 +370,9 @@
     },
     "symfony/polyfill-php72": {
         "version": "v1.9.0"
+    },
+    "symfony/process": {
+        "version": "v4.1.4"
     },
     "symfony/property-access": {
         "version": "v4.1.4"
