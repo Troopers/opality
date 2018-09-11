@@ -73,9 +73,19 @@
         <target>Activé</target>
         <jms:reference-file>easy_admin.yaml</jms:reference-file>
       </trans-unit>
-      <trans-unit id="40439544c9a6bccb868e9c3b1c191311c6c5b11b" resname="admin.user.id">
-        <source>admin.user.id</source>
-        <target>#</target>
+      <trans-unit id="670b7e06f1b4b77d9979fa94afb5030e9d925c7c" resname="admin.user.firstname">
+        <source>admin.user.firstname</source>
+        <target>Prénom</target>
+        <jms:reference-file>easy_admin.yaml</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="5d42754b308dfa1ffbc74699c0f6b1f4f8cfc7fc" resname="admin.user.lastname">
+        <source>admin.user.lastname</source>
+        <target>Nom</target>
+        <jms:reference-file>easy_admin.yaml</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="ae452b1a58d4e4da6363b67f4a337aff268734dd" resname="admin.user.picture">
+        <source>admin.user.picture</source>
+        <target>Image</target>
         <jms:reference-file>easy_admin.yaml</jms:reference-file>
       </trans-unit>
       <trans-unit id="2e5cfc466b15da537899638afe5994929b981154" resname="admin.user.plainPassword">

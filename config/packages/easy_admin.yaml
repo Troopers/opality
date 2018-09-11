@@ -27,12 +27,14 @@ easy_admin:
             list:
                 title: 'admin.user'
                 fields:
-                    - { property: 'id', label: 'admin.user.id' }
+                    - { property: 'picture', label: 'admin.user.picture', template: 'admin/user/picture.html.twig' }
                     - { property: 'email', label: 'admin.user.email' }
                     - { property: 'enabled', label: 'admin.user.enabled' }
             form:
                 title: 'admin.new'
                 fields:
+                    - { property: 'firstname', type: 'email', label: 'admin.user.firstname' }
+                    - { property: 'lastname', type: 'email', label: 'admin.user.lastname' }
                     - { property: 'email', type: 'email', label: 'admin.user.email' }
                     - { property: 'plainPassword', type: 'password', label: 'admin.user.plainPassword' }
             edit:
