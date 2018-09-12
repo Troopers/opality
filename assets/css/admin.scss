@@ -1,0 +1,37 @@
+@import 'variable';
+
+.easyadmin {
+    .main-header {
+        .navbar {
+            background-color: #fff;
+            .user-menu .btn {
+                color: $prune;
+            }
+        }
+        #header-logo .logo {
+            font-family: 'Montserrat';
+            color: $prune;
+            font-weight: 800;
+        }
+        .sidebar-toggle:before {
+            background-image: url('../../public/images/troopers-square.png');
+            background-size: 30px 30px;
+            display: inline-block;
+            width: 30px;
+            height: 30px;
+            content: "";
+            margin-top: 10px;
+        }
+    }
+    .badge {
+        &.badge-critical {
+            background-color: $red;
+        }
+        &.badge-medium {
+            background-color: $orange;
+        }
+        &.badge-minor {
+            background-color: $blue;
+        }
+    }
+}

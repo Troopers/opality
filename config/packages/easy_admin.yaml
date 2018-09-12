@@ -1,4 +1,12 @@
 easy_admin:
+    site_name: 'Trooping'
+    design:
+        brand_color: '#2e243f'
+        assets:
+            favicon: '/favicons/favicon-96x96.png'
+            css:
+                - 'build/admin.css'
+                - 'https://fonts.googleapis.com/css?family=Montserrat'
     entities:
         Responsibility:
             class: 'App\Entity\Responsibility'
