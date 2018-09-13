@@ -3,6 +3,7 @@
 namespace App\Translation;
 
 use App\DBAL\Types\CriticalityType;
+use App\DBAL\Types\RecurrenceType;
 use JMS\TranslationBundle\Model\Message;
 use JMS\TranslationBundle\Translation\TranslationContainerInterface;
 
@@ -19,6 +20,7 @@ class DynamicTranslations implements TranslationContainerInterface
 
         $doctrineEnums = [
             CriticalityType::class,
+            RecurrenceType::class,
         ];
 
         foreach ($doctrineEnums as $doctrineEnum) {

@@ -8,6 +8,23 @@ easy_admin:
                 - 'build/admin.css'
                 - 'https://fonts.googleapis.com/css?family=Montserrat'
     entities:
+        CoreValue:
+            class: 'App\Entity\CoreValue'
+            label: 'admin.core_value'
+            list:
+                help: 'admin.core_value.help'
+                title: 'admin.core_value'
+                fields:
+                    - { property: 'name', label: 'admin.core_value.name' }
+                    - { property: 'description', label: 'admin.core_value.description' }
+                    - { property: 'color', label: 'admin.core_value.color', template: 'admin/color.html.twig' }
+                    - { property: 'goals', label: 'admin.core_value.goals' }
+            form:
+                fields:
+                    - { property: 'name', label: 'admin.core_value.name' }
+                    - { property: 'description', label: 'admin.core_value.description' }
+                    - { property: 'color', label: 'admin.core_value.color' }
+                    - { property: 'goals', label: 'admin.core_value.goals' }
         Goal:
             class: 'App\Entity\Goal'
             label: 'admin.goal'
