@@ -39,3 +39,6 @@ services:
     App\Translation\EasyAdminTranslationExtractor:
         tags:
             - { name: jms_translation.file_visitor }
+
+    App\DataFixtures\Faker\AppFakerProvider:
+        tags: [ { name: nelmio_alice.faker.provider } ]
