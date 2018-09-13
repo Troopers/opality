@@ -11,6 +11,56 @@
         <target>Modifier</target>
         <jms:reference-file>easy_admin.yaml</jms:reference-file>
       </trans-unit>
+      <trans-unit id="3c138b9a0b067c9475ab0af84ca9a16ee76b95ab" resname="admin.goal">
+        <source>admin.goal</source>
+        <target>Objectifs</target>
+        <jms:reference-file>easy_admin.yaml</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="0aee976f64bc692be14e7bb7608c97c10300ca2e" resname="admin.goal.ambitious">
+        <source>admin.goal.ambitious</source>
+        <target>Ambitieux</target>
+        <jms:reference-file>easy_admin.yaml</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="9274e50a2674a41a2131da6c0babc07670111ecf" resname="admin.goal.attainable">
+        <source>admin.goal.attainable</source>
+        <target>Réalisable</target>
+        <jms:reference-file>easy_admin.yaml</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="3c964e219e4e4bb96c87028cfcf60a6a8f5d1b9e" resname="admin.goal.coreValues">
+        <source>admin.goal.coreValues</source>
+        <target>Valeurs</target>
+        <jms:reference-file>easy_admin.yaml</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="0bca188fc89d818edc2c50669ff25a7b0d7fec1e" resname="admin.goal.description">
+        <source>admin.goal.description</source>
+        <target>Description</target>
+        <jms:reference-file>easy_admin.yaml</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="6d9c6666bc56c916897eb432a11025240336014c" resname="admin.goal.help">
+        <source>admin.goal.help</source>
+        <target>Les objectifs ne sont pas obligatoires et ne sont pas pour tout le monde. Certains y voient une manière de se dépasser, de s'améliorer, d'autres y voient un outil de mise sous pression inutile pour faire son travail. Se mettre ou non des objectifs est donc propre à chacun et personne ne devrait s'en occuper.</target>
+        <jms:reference-file>easy_admin.yaml</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="0fbb00b01847abcce23011a0dbd4d327936f656d" resname="admin.goal.measurement">
+        <source>admin.goal.measurement</source>
+        <target>Valeur chiffré</target>
+        <jms:reference-file>easy_admin.yaml</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="e66378b07dec6ac42523336f01fccd20f850f5af" resname="admin.goal.name">
+        <source>admin.goal.name</source>
+        <target>Nom</target>
+        <jms:reference-file>easy_admin.yaml</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="6876efe0d70b380265b353f7bfc353b5946e457e" resname="admin.goal.plannedDate">
+        <source>admin.goal.plannedDate</source>
+        <target>Date envisagée</target>
+        <jms:reference-file>easy_admin.yaml</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="0ab3faa66533f9640bac4b2733641d1056288972" resname="admin.goal.recurrence">
+        <source>admin.goal.recurrence</source>
+        <target>Recurrence</target>
+        <jms:reference-file>easy_admin.yaml</jms:reference-file>
+      </trans-unit>
       <trans-unit id="0a8ba0dbcaddd2b93a63cd48affb14be447cad48" resname="admin.level.critical.label">
         <source>admin.level.critical.label</source>
         <target>Critique</target>

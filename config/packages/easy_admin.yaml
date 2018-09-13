@@ -8,6 +8,25 @@ easy_admin:
                 - 'build/admin.css'
                 - 'https://fonts.googleapis.com/css?family=Montserrat'
     entities:
+        Goal:
+            class: 'App\Entity\Goal'
+            label: 'admin.goal'
+            list:
+                help: 'admin.goal.help'
+                title: 'admin.goal'
+                fields:
+                    - { property: 'name', label: 'admin.goal.name' }
+                    - { property: 'coreValues', label: 'admin.goal.coreValues' }
+            form:
+                fields:
+                    - { property: 'name', label: 'admin.goal.name' }
+                    - { property: 'recurrence', label: 'admin.goal.recurrence', type: 'App\Form\Type\RecurrenceType' }
+                    - { property: 'description', label: 'admin.goal.description' }
+                    - { property: 'measurement', label: 'admin.goal.measurement', type_options: { required: false } }
+                    - { property: 'attainable', label: 'admin.goal.attainable' }
+                    - { property: 'ambitious', label: 'admin.goal.ambitious' }
+                    - { property: 'plannedDate', label: 'admin.goal.plannedDate' }
+                    - { property: 'coreValues', label: 'admin.goal.coreValues' }
         Responsibility:
             class: 'App\Entity\Responsibility'
             label: 'admin.responsibility'
