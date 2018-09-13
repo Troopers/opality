@@ -2,6 +2,8 @@ security:
     encoders:
         App\Entity\User:
             algorithm: bcrypt
+        HWI\Bundle\OAuthBundle\Security\Core\User\OAuthUser:
+            algorithm: bcrypt
 
     # https://symfony.com/doc/current/security.html#where-do-users-come-from-user-providers
     providers:
@@ -24,7 +26,10 @@ security:
             logout:
                 path:   /logout
                 target: /
-            provider: hwi
+            provider: app_user_provider
+            guard:
+                authenticators:
+                    - App\Security\FormLoginAuthenticator
             oauth:
                 resource_owners:
                     gitlab: "/login/check-gitlab"
