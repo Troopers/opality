@@ -49,10 +49,13 @@ easy_admin:
             label: 'admin.responsibility'
             list:
                 title: 'admin.responsibility'
+                help: 'admin.responsibility.help'
                 fields:
                     - { property: 'id', label: 'admin.responsibility.id' }
                     - { property: 'name', label: 'admin.responsibility.name' }
-                    - { property: 'criticality', label: 'admin.responsibility.criticality' }
+                    - { property: 'criticality', label: 'admin.responsibility.criticality', template: 'admin/criticality.html.twig' }
+                    - { property: 'leaderInvolvements', label: 'admin.responsibility.leaderInvolvements', template: 'admin/responsibility/involvementers.html.twig' }
+                    - { property: 'advisorInvolvements', label: 'admin.responsibility.advisorInvolvements', template: 'admin/responsibility/involvementers.html.twig' }
                     - { property: 'enabled', label: 'admin.responsibility.enabled' }
             form:
                 fields:
@@ -60,6 +63,24 @@ easy_admin:
                     - { property: 'description', label: 'admin.responsibility.description' }
                     - { property: 'criticality', label: 'admin.responsibility.criticality', type: 'App\Form\Type\CriticalityType' }
                     - { property: 'enabled', label: 'admin.responsibility.enabled' }
+                    -
+                      property: 'leaderInvolvements'
+                      label: 'admin.responsibility.leaderInvolvements'
+                      type: 'collection'
+                      type_options:
+                          entry_type: App\Form\LeaderInvolvementType
+                          allow_delete: true
+                          allow_add: true
+                          by_reference: false
+                    -
+                      property: 'advisorInvolvements'
+                      label: 'admin.responsibility.advisorInvolvements'
+                      type: 'collection'
+                      type_options:
+                          entry_type: App\Form\AdvisorInvolvementType
+                          allow_delete: true
+                          allow_add: true
+                          by_reference: false
             edit:
                 title: 'admin.edit'
             new:

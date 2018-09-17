@@ -1,0 +1,5 @@
+{% for involvement in value %}
+    {% include 'admin/user/picture.html.twig' with {
+        'value' : involvement.user.picture
+    } %}
+{% endfor %}

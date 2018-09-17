@@ -43,9 +43,26 @@ class GitlabUserProvider extends OAuthUserProvider
             $user = new User();
             $user->setEmail($email);
             $user->setFirstname($response->getData()['name']);
-            $filename = sprintf("/uploads/%s.jpeg", $response->getData()['username']);
-            file_put_contents($this->publicDir.$filename, fopen($response->getData()['avatar_url'], 'r'));
-            $user->setPicture($filename);
+            $filename = sprintf("/uploads/%s-%s.jpeg", $response->getData()['username'], time());
+            try {
+                //if user doesn't  have any avatar, we generate him one
+                if (!$avatarUrl = $response->getData()['avatar_url']) {
+                    $initials = "";
+                    foreach (explode(" ", $user->getFirstname()) as $item) {
+                        $initials .= $item[0];
+
+                    }
+                    $avatarUrl = sprintf(
+                        'https://dummyimage.com/120x120/%s/FFFFFF.jpg&text=%s',
+                        substr(hash('sha512', $email), 0, 6),
+                        $initials
+                    );
+                }
+                file_put_contents($this->publicDir . $filename, fopen($avatarUrl, 'r'));
+                $user->setPicture($filename);
+            } catch (\Exception $e) {
+                //allow fail the avatar fetch
+            }
             $user->setEnabled(true);
             $user->setPassword('---gitlab-oauth---');
             $this->entityManager->persist($user);

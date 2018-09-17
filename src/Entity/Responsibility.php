@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use ApiPlatform\Core\Annotation\ApiResource;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -37,6 +39,30 @@ class Responsibility
      * @ORM\Column(type="boolean")
      */
     private $enabled;
+
+    /**
+     * @ORM\OneToMany(targetEntity="App\Entity\LeaderInvolvement", mappedBy="responsibility", orphanRemoval=true, cascade={"persist"})
+     */
+    private $leaderInvolvements;
+
+    /**
+     * @ORM\OneToMany(targetEntity="App\Entity\AdvisorInvolvement", mappedBy="responsibility", orphanRemoval=true, cascade={"persist"})
+     */
+    private $advisorInvolvements;
+
+    public function __construct()
+    {
+        $this->leaderInvolvements = new ArrayCollection();
+        $this->advisorInvolvements = new ArrayCollection();
+    }
+
+    /**
+     * @return null|string
+     */
+    public function __toString()
+    {
+        return $this->getName();
+    }
 
     public function getId(): ?int
     {
@@ -87,6 +113,68 @@ class Responsibility
     public function setEnabled(bool $enabled): self
     {
         $this->enabled = $enabled;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|LeaderInvolvement[]
+     */
+    public function getLeaderInvolvements(): Collection
+    {
+        return $this->leaderInvolvements;
+    }
+
+    public function addLeaderInvolvement(LeaderInvolvement $leaderInvolvement): self
+    {
+        if (!$this->leaderInvolvements->contains($leaderInvolvement)) {
+            $this->leaderInvolvements[] = $leaderInvolvement;
+            $leaderInvolvement->setResponsibility($this);
+        }
+
+        return $this;
+    }
+
+    public function removeLeaderInvolvement(LeaderInvolvement $leaderInvolvement): self
+    {
+        if ($this->leaderInvolvements->contains($leaderInvolvement)) {
+            $this->leaderInvolvements->removeElement($leaderInvolvement);
+            // set the owning side to null (unless already changed)
+            if ($leaderInvolvement->getResponsibility() === $this) {
+                $leaderInvolvement->setResponsibility(null);
+            }
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|AdvisorInvolvement[]
+     */
+    public function getAdvisorInvolvements(): Collection
+    {
+        return $this->advisorInvolvements;
+    }
+
+    public function addAdvisorInvolvement(AdvisorInvolvement $advisorInvolvement): self
+    {
+        if (!$this->advisorInvolvements->contains($advisorInvolvement)) {
+            $this->advisorInvolvements[] = $advisorInvolvement;
+            $advisorInvolvement->setResponsibility($this);
+        }
+
+        return $this;
+    }
+
+    public function removeAdvisorInvolvement(AdvisorInvolvement $advisorInvolvement): self
+    {
+        if ($this->advisorInvolvements->contains($advisorInvolvement)) {
+            $this->advisorInvolvements->removeElement($advisorInvolvement);
+            // set the owning side to null (unless already changed)
+            if ($advisorInvolvement->getResponsibility() === $this) {
+                $advisorInvolvement->setResponsibility(null);
+            }
+        }
 
         return $this;
     }

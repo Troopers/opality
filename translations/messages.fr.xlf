@@ -1,11 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:jms="urn:jms:translation" version="1.2">
-  <file date="2018-09-06T21:32:33Z" source-language="en" target-language="fr" datatype="plaintext" original="not.available">
+  <file date="2018-09-13T16:15:30Z" source-language="en" target-language="fr" datatype="plaintext" original="not.available">
     <header>
       <tool tool-id="JMSTranslationBundle" tool-name="JMSTranslationBundle" tool-version="1.1.0-DEV"/>
       <note>The source node in most cases contains the sample message as written by the developer. If it looks like a dot-delimitted string such as "form.label.firstname", then the developer has not provided a default message.</note>
     </header>
     <body>
+      <trans-unit id="858bf37c55e06b835f43dcc6972caa6cc209f7d1" resname="admin.core_value">
+        <source>admin.core_value</source>
+        <target>Valeurs</target>
+        <jms:reference-file>easy_admin.yaml</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="8ade23a7f2aaef72de2c22a2fd32b967a6945174" resname="admin.core_value.color">
+        <source>admin.core_value.color</source>
+        <target>Couleur</target>
+        <jms:reference-file>easy_admin.yaml</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="6560c15500a73f3e922cc720f67008f3a792c575" resname="admin.core_value.description">
+        <source>admin.core_value.description</source>
+        <target>Description</target>
+        <jms:reference-file>easy_admin.yaml</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="6978928f8755885ff0c417e97ed40b3b507b1b03" resname="admin.core_value.goals">
+        <source>admin.core_value.goals</source>
+        <target>Objectifs</target>
+        <jms:reference-file>easy_admin.yaml</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="047fc1dd8d177deb4c8642db1f0d9931c5b3b13d" resname="admin.core_value.help">
+        <source>admin.core_value.help</source>
+        <target>Les valeurs sont l'ADN et l'âme de l'organisation. Elles dirigent toutes les actions et doivent être omni-présentes.</target>
+        <jms:reference-file>easy_admin.yaml</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="16d243417e9c903e52c67e0428df720f2faeb405" resname="admin.core_value.name">
+        <source>admin.core_value.name</source>
+        <target>Nom</target>
+        <jms:reference-file>easy_admin.yaml</jms:reference-file>
+      </trans-unit>
       <trans-unit id="b577ca8f4be857b71df2bdeb83271036a59b9179" resname="admin.edit">
         <source>admin.edit</source>
         <target>Modifier</target>
@@ -78,9 +108,35 @@
         <target>Nouveau</target>
         <jms:reference-file>easy_admin.yaml</jms:reference-file>
       </trans-unit>
+      <trans-unit id="11d13eaef7941078f6655960c9c5890d51e683d5" resname="admin.recurrence.monthly.label">
+        <source>admin.recurrence.monthly.label</source>
+        <target>Mensuel</target>
+      </trans-unit>
+      <trans-unit id="6b366e4a9c41b19318762247cd980f0d523ab04c" resname="admin.recurrence.quarterly.label">
+        <source>admin.recurrence.quarterly.label</source>
+        <target>Trimestriel</target>
+      </trans-unit>
+      <trans-unit id="6f1f2491e2eea944b3f0b6d96da68fabd8025890" resname="admin.recurrence.weekly.label">
+        <source>admin.recurrence.weekly.label</source>
+        <target>Hebdomadaire</target>
+      </trans-unit>
+      <trans-unit id="52dfc212763a3a3734e6cc5edece5afe60a255e7" resname="admin.recurrence.yearly.label">
+        <source>admin.recurrence.yearly.label</source>
+        <target>Annuel</target>
+      </trans-unit>
       <trans-unit id="942d7e84959c1e11e3acd580f102a94d38e3049c" resname="admin.responsibility">
         <source>admin.responsibility</source>
         <target>Responsabilités</target>
+        <jms:reference-file>easy_admin.yaml</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="5c5c093e4e28a56a1192fd4407870113744f8a74" resname="admin.responsibility.advisorInvolvements">
+        <source>admin.responsibility.advisorInvolvements</source>
+        <target>Conseillers</target>
+        <jms:reference-file>easy_admin.yaml</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="897e26715cef0b29c731ba3f06754fd7830702c8" resname="admin.responsibility.core_values">
+        <source>admin.responsibility.core_values</source>
+        <target>Valeurs</target>
         <jms:reference-file>easy_admin.yaml</jms:reference-file>
       </trans-unit>
       <trans-unit id="b326aa5a40d311629a410fe1eff1756cd03eb2eb" resname="admin.responsibility.criticality">
@@ -98,9 +154,19 @@
         <target>Activé</target>
         <jms:reference-file>easy_admin.yaml</jms:reference-file>
       </trans-unit>
+      <trans-unit id="fae26ac456a1e4fa2ed93a3e2a0ffa835cf201f0" resname="admin.responsibility.help">
+        <source>admin.responsibility.help</source>
+        <target>Les responsabilités sont les éléments les plus importants d'une organisation. Chacun peut se positionner sur des responsabilités en tant que leader ou conseiller. Il est ensuite possible de faire des commentaires bienveillants sur la manière d'accomplir cette responsabilité. Le leader recoit alors une notification et peut ainsi progresser.</target>
+        <jms:reference-file>easy_admin.yaml</jms:reference-file>
+      </trans-unit>
       <trans-unit id="a2651968c1967f9f8ae5024768085c1b5b3db17a" resname="admin.responsibility.id">
         <source>admin.responsibility.id</source>
         <target>#</target>
+        <jms:reference-file>easy_admin.yaml</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="b02a38a2be4814aa40c32ed99185d103ff5c11d6" resname="admin.responsibility.leaderInvolvements">
+        <source>admin.responsibility.leaderInvolvements</source>
+        <target>Leaders</target>
         <jms:reference-file>easy_admin.yaml</jms:reference-file>
       </trans-unit>
       <trans-unit id="16dae1353414e5296d8c12521922398df9afcb4d" resname="admin.responsibility.name">
@@ -142,6 +208,41 @@
         <source>admin.user.plainPassword</source>
         <target>Mot de passe</target>
         <jms:reference-file>easy_admin.yaml</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="c2d367854d98db472c5515b0a3a14ace6a6b1f40" resname="form.advisorInvolvement.user">
+        <source>form.advisorInvolvement.user</source>
+        <target>Utilisateur</target>
+        <jms:reference-file line="16">/Form/AdvisorInvolvementType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="2f0af0c8b34a35a7dddd64104c9b2789a8bc3e80" resname="form.leaderInvolvement.anxiety">
+        <source>form.leaderInvolvement.anxiety</source>
+        <target>Anxiogène</target>
+        <jms:reference-file line="22">/Form/LeaderInvolvementType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="89e9a82405c59c27afef1a3622326d954d559a0e" resname="form.leaderInvolvement.mentalCharge">
+        <source>form.leaderInvolvement.mentalCharge</source>
+        <target>Charge mentale</target>
+        <jms:reference-file line="16">/Form/LeaderInvolvementType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="d9b55e9600aa7563e7cf4abddb56e94dc7b15cae" resname="form.leaderInvolvement.palatability">
+        <source>form.leaderInvolvement.palatability</source>
+        <target>Appétence</target>
+        <jms:reference-file line="25">/Form/LeaderInvolvementType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="29d61d55d0a084f314309a1f80952782fe880962" resname="form.leaderInvolvement.timeConsumator">
+        <source>form.leaderInvolvement.timeConsumator</source>
+        <target>Conso de temps</target>
+        <jms:reference-file line="19">/Form/LeaderInvolvementType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="4aa4951856c10a00d6a6f3e3396c42f77d12f551" resname="form.leaderInvolvement.toughness">
+        <source>form.leaderInvolvement.toughness</source>
+        <target>Difficulté</target>
+        <jms:reference-file line="28">/Form/LeaderInvolvementType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="00b61dcdd23a1609d536f70213e2dd7d8c5e5e4b" resname="form.leaderInvolvement.user">
+        <source>form.leaderInvolvement.user</source>
+        <target>Utilisateur</target>
+        <jms:reference-file line="31">/Form/LeaderInvolvementType.php</jms:reference-file>
       </trans-unit>
     </body>
   </file>
