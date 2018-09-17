@@ -1,0 +1,15 @@
+App\Entity\LeaderInvolvement:
+    leaderInvolvement_{1..60}:
+        user: '@user*'
+        mentalCharge: <criticality()>
+        timeConsumator: <criticality()>
+        anxiety: <criticality()>
+        palatability: <criticality()>
+        toughness: <criticality()>
+        responsibility: '@responsibility*'
+
+App\Entity\AdvisorInvolvement:
+    advisorInvolvement_{1..150}:
+        user: '@user*'
+        responsibility: '@responsibility*'
+

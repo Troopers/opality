@@ -1,0 +1,9 @@
+App\Entity\User:
+    user_{1..10}:
+        firstname: <firstname()>
+        lastname: <lastname()>
+        plainPassword: 'pass'
+        email: <email()>
+        enabled: '80%? 1 : 0'
+        picture: '/images/fixtures/<current()>.jpeg'
+

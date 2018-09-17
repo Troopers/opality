@@ -1,0 +1,12 @@
+App\Entity\Goal:
+    goal_{1..50}:
+        name: <sentence(7)>
+        description: <text()>
+        measurement: <text()>
+        attainable: true
+        ambitious: true
+        accomplished: '3%? 1 : 0'
+        plannedDate: <dateTimeBetween('now', '1 year')>
+        recurrence: <recurrence()>
+        coreValues: '<numberBetween(0, 5)>x @coreValue*'
+

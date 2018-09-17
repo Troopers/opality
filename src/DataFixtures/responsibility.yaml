@@ -1,0 +1,7 @@
+App\Entity\Responsibility:
+    responsibility_{1..50}:
+        name: <sentence(10)>
+        description: <text()>
+        criticality: <criticality()>
+        enabled: '80%? 1 : 0'
+

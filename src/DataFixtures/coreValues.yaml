@@ -1,0 +1,16 @@
+App\Entity\CoreValue:
+    coreValue_quality:
+        name: "Qualité"
+        color: 2e243f
+    coreValue_transparence:
+        name: "Transparence"
+        color: 5fafe2
+    coreValue_Creativite:
+        name: "Créativité"
+        color: e26466
+    coreValue_Innovation:
+        name: "Innovation"
+        color: f4a15f
+    coreValue_engagement:
+        name: "Engagement"
+        color: 4fb28f
