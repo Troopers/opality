@@ -18,6 +18,28 @@ security:
         dev:
             pattern: ^/(_(profiler|wdt)|css|images|js)/
             security: false
+        api:
+            pattern:   ^/api
+            stateless: true
+            provider: app_user_provider
+            guard:
+                authenticators:
+                - lexik_jwt_authentication.jwt_token_authenticator
+        api_login:
+            pattern:  ^/api/login
+            stateless: true
+            anonymous: true
+            provider: app_user_provider
+            form_login:
+                check_path: /api/login_check
+                username_parameter: _username
+                password_parameter: _password
+                success_handler: lexik_jwt_authentication.handler.authentication_success
+                failure_handler: lexik_jwt_authentication.handler.authentication_failure
+        refresh:
+            pattern:  ^/api/token/refresh
+            stateless: true
+            anonymous: true
         main:
             anonymous: true
             form_login:
@@ -51,6 +73,8 @@ security:
     # Note: Only the *first* access control that matches will be used
     access_control:
          - { path: ^/log(in|out), roles: IS_AUTHENTICATED_ANONYMOUSLY }
+         - { path: ^/api/token/refresh, roles: IS_AUTHENTICATED_ANONYMOUSLY }
+         - { path: ^/api/login, roles: IS_AUTHENTICATED_ANONYMOUSLY }
          - { path: ^/connect, roles: IS_AUTHENTICATED_ANONYMOUSLY }
          - { path: ^/admin, roles: ROLE_USER }
          - { path: ^/, roles: ROLE_USER }
