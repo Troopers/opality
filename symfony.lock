@@ -158,6 +158,12 @@
     "jms/translation-bundle": {
         "version": "1.4.3"
     },
+    "knplabs/knp-menu": {
+        "version": "2.3.0"
+    },
+    "knplabs/knp-menu-bundle": {
+        "version": "v2.2.1"
+    },
     "liip/imagine-bundle": {
         "version": "1.8",
         "recipe": {

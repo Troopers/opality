@@ -16,7 +16,16 @@ class DynamicTranslations implements TranslationContainerInterface
      */
     public static function getTranslationMessages()
     {
-        $messages = [];
+        $messages = [
+            new Message('app.menu.goals'),
+            new Message('app.menu.roles'),
+            new Message('app.menu.kudos'),
+            new Message('app.menu.visualization'),
+            new Message('app.menu.visualization.organizationChart'),
+            new Message('app.menu.visualization.botleneck'),
+            new Message('app.menu.visualization.blooming'),
+            new Message('app.menu.meeting'),
+        ];
 
         $doctrineEnums = [
             CriticalityType::class,

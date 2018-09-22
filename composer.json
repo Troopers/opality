@@ -11,6 +11,7 @@
         "guzzlehttp/psr7": "^1.4",
         "hwi/oauth-bundle": "^0.6.3",
         "jms/translation-bundle": "^1.4",
+        "knplabs/knp-menu-bundle": "^2.2",
         "liip/imagine-bundle": "^2.1",
         "php-http/guzzle6-adapter": "^1.1",
         "php-http/httplug-bundle": "^1.11",

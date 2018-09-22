@@ -42,3 +42,9 @@ services:
 
     App\DataFixtures\Faker\AppFakerProvider:
         tags: [ { name: nelmio_alice.faker.provider } ]
+
+
+    App\Menu\MenuBuilder:
+        arguments: ["@knp_menu.factory"]
+        tags:
+            - { name: knp_menu.menu_builder, method: createMainMenu, alias: main }

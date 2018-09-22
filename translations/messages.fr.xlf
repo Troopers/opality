@@ -209,6 +209,38 @@
         <target>Mot de passe</target>
         <jms:reference-file>easy_admin.yaml</jms:reference-file>
       </trans-unit>
+      <trans-unit id="1bf2b6d62b1aa95f556ad419338646688ba92402" resname="app.menu.goals">
+        <source>app.menu.goals</source>
+        <target>Objectifs</target>
+      </trans-unit>
+      <trans-unit id="705b6852fd6bd261ad8648f0355a8d537fb3caab" resname="app.menu.kudos">
+        <source>app.menu.kudos</source>
+        <target>Kudos</target>
+      </trans-unit>
+      <trans-unit id="0c71cc891e020b3d63e7782d2ccc25a3a6df9b24" resname="app.menu.meeting">
+        <source>app.menu.meeting</source>
+        <target>Réunion</target>
+      </trans-unit>
+      <trans-unit id="e8b385866927267f1b45a7a3a2ea06dd454e8a09" resname="app.menu.roles">
+        <source>app.menu.roles</source>
+        <target>Responsabilités</target>
+      </trans-unit>
+      <trans-unit id="be3e6a74bbe3b1906bba6dc2223bf552e47ab009" resname="app.menu.visualization">
+        <source>app.menu.visualization</source>
+        <target>Visualisations</target>
+      </trans-unit>
+      <trans-unit id="6450995da5db21f8d23e2b6f6847153e5dcd3438" resname="app.menu.visualization.blooming">
+        <source>app.menu.visualization.blooming</source>
+        <target>Épanouissement</target>
+      </trans-unit>
+      <trans-unit id="fc6c1be524b0acd1ad0732d7a49abda06da5f785" resname="app.menu.visualization.botleneck">
+        <source>app.menu.visualization.botleneck</source>
+        <target>Goulet d'étranglement</target>
+      </trans-unit>
+      <trans-unit id="c86835d6afab49dd8fa2db2eceaa66d6e1fa246d" resname="app.menu.visualization.organizationChart">
+        <source>app.menu.visualization.organizationChart</source>
+        <target>Organigramme</target>
+      </trans-unit>
       <trans-unit id="c2d367854d98db472c5515b0a3a14ace6a6b1f40" resname="form.advisorInvolvement.user">
         <source>form.advisorInvolvement.user</source>
         <target>Utilisateur</target>

@@ -1,0 +1,37 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ parent() }}{% endblock %}
+
+{% block body %}
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-4">
+                <div class="list-group" role="tablist">
+                {% for coreValue in coreValues %}
+                    <a class="list-group-item list-group-item-action flex-column align-items-start{% if loop.first %} active{% endif %}" data-toggle="list" href="#list-{{ coreValue.slug }}" role="tab" aria-controls="{{ coreValue.slug }}">
+                        <div class="d-flex w-100 justify-content-between">
+                            <h5 class="mb-1">{{ coreValue.name }}</h5>
+                            <small>{{ coreValue.goals|length }} objectifs</small>
+                        </div>
+                        <p class="mb-1">
+                            {{ coreValue.description }}
+                        </p>
+                        {% if coreValue.mantra != '' %}
+                            <small>{{ coreValue.mantra }}</small>
+                        {% endif %}
+                    </a>
+                {% endfor %}
+                </div>
+            </div>
+            <div class="col-8">
+                <div class="tab-content" id="nav-tabContent">
+                    {% for coreValue in coreValues %}
+                    <div class="tab-pane fade {% if loop.first %}show active{% endif %}" id="list-{{ coreValue.slug }}" role="tabpanel" aria-labelledby="list-{{ coreValue.slug }}-list">
+                        ... {{ coreValue.name }}
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
