@@ -2,15 +2,20 @@ App\Entity\CoreValue:
     coreValue_quality:
         name: "Qualité"
         color: 2e243f
+        mantra: <sentence()>
     coreValue_transparence:
         name: "Transparence"
         color: 5fafe2
+        mantra: <sentence()>
     coreValue_Creativite:
         name: "Créativité"
         color: e26466
+        mantra: <sentence()>
     coreValue_Innovation:
         name: "Innovation"
         color: f4a15f
+        mantra: <sentence()>
     coreValue_engagement:
         name: "Engagement"
         color: 4fb28f
+        mantra: <sentence()>

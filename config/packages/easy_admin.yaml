@@ -23,6 +23,7 @@ easy_admin:
                 fields:
                     - { property: 'name', label: 'admin.core_value.name' }
                     - { property: 'description', label: 'admin.core_value.description' }
+                    - { property: 'mantra', label: 'admin.core_value.mantra' }
                     - { property: 'color', label: 'admin.core_value.color' }
                     - { property: 'goals', label: 'admin.core_value.goals' }
         Goal:
