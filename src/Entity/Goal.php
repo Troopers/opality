@@ -69,6 +69,11 @@ class Goal
      */
     private $recurrence;
 
+    /**
+     * @ORM\OneToMany(targetEntity="App\Entity\GoalEvaluation", mappedBy="goal", orphanRemoval=true)
+     */
+    private $evaluations;
+
     public function __toString()
     {
         return $this->getName();
@@ -77,6 +82,7 @@ class Goal
     public function __construct()
     {
         $this->coreValues = new ArrayCollection();
+        $this->evaluations = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -202,6 +208,37 @@ class Goal
     public function setRecurrence($recurrence): self
     {
         $this->recurrence = $recurrence;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|GoalEvaluation[]
+     */
+    public function getEvaluations(): Collection
+    {
+        return $this->evaluations;
+    }
+
+    public function addEvaluation(GoalEvaluation $evaluation): self
+    {
+        if (!$this->evaluations->contains($evaluation)) {
+            $this->evaluations[] = $evaluation;
+            $evaluation->setGoal($this);
+        }
+
+        return $this;
+    }
+
+    public function removeEvaluation(GoalEvaluation $evaluation): self
+    {
+        if ($this->evaluations->contains($evaluation)) {
+            $this->evaluations->removeElement($evaluation);
+            // set the owning side to null (unless already changed)
+            if ($evaluation->getGoal() === $this) {
+                $evaluation->setGoal(null);
+            }
+        }
 
         return $this;
     }

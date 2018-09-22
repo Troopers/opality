@@ -7,6 +7,13 @@ easy_admin:
             css:
                 - 'build/admin.css'
                 - 'https://fonts.googleapis.com/css?family=Montserrat'
+        menu:
+        - { label: 'admin.menu.goal', entity: 'Goal', icon: 'bullseye' }
+        - { label: 'admin.menu.goalEvaluation', entity: 'GoalEvaluation', icon: 'check-square-o' }
+        - { label: 'admin.menu.coreValue', entity: 'CoreValue', icon: 'heartbeat' }
+        - { label: 'admin.menu.responsibility', entity: 'Responsibility', icon: 'black-tie' }
+        - { label: 'admin.menu.users', entity: 'User', icon: 'users' }
+
     entities:
         CoreValue:
             class: 'App\Entity\CoreValue'
@@ -26,6 +33,9 @@ easy_admin:
                     - { property: 'mantra', label: 'admin.core_value.mantra' }
                     - { property: 'color', label: 'admin.core_value.color' }
                     - { property: 'goals', label: 'admin.core_value.goals' }
+        GoalEvaluation:
+            class: 'App\Entity\GoalEvaluation'
+            label: 'admin.goalEvaluation'
         Goal:
             class: 'App\Entity\Goal'
             label: 'admin.goal'
@@ -86,7 +96,6 @@ easy_admin:
                 title: 'admin.edit'
             new:
                 title: 'admin.new'
-
         User:
             class: 'App\Entity\User'
             label: 'admin.user'
@@ -99,8 +108,8 @@ easy_admin:
             form:
                 title: 'admin.new'
                 fields:
-                    - { property: 'firstname', type: 'email', label: 'admin.user.firstname' }
-                    - { property: 'lastname', type: 'email', label: 'admin.user.lastname' }
+                    - { property: 'firstname', label: 'admin.user.firstname' }
+                    - { property: 'lastname', label: 'admin.user.lastname' }
                     - { property: 'email', type: 'email', label: 'admin.user.email' }
                     - { property: 'plainPassword', type: 'password', label: 'admin.user.plainPassword' }
             edit:
