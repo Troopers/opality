@@ -1,0 +1,13 @@
+App\Entity\Team:
+    team_developers:
+        name: "Développeurs"
+        members: '5x @user_*'
+    team_developers_front:
+        name: "Développeurs Front"
+        members: '2x @user_*'
+        parent: '@team_developers'
+    team_developers_backend:
+        name: "Développeurs Backend"
+        members: '3x @user_*'
+        parent: '@team_developers'
+

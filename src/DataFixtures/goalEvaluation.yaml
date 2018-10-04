@@ -1,0 +1,6 @@
+App\Entity\GoalEvaluation:
+    goalEvaluation_{1..250}:
+        goal: '@goal_*'
+        value: '<numberBetween(0,100)>'
+        confidence: '<degreeConfidence()>'
+        user: '@user_*'

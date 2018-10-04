@@ -6,4 +6,11 @@ App\Entity\User:
         email: <email()>
         enabled: '80%? 1 : 0'
         picture: '/images/fixtures/<current()>.jpeg'
+    user_leny:
+        firstname: Leny
+        lastname: Bernard
+        plainPassword: 'pass'
+        email: "leny@troopers.email"
+        enabled: 1
+        picture: '/images/fixtures/1.jpeg'
 

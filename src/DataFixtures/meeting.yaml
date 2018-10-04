@@ -1,0 +1,9 @@
+App\Entity\Meeting:
+    meeting_{1..30}:
+        name: <sentence()>
+        date: <dateTimeBetween('-3 month', 'now')>
+        guests: '<numberBetween(0, 10)>x @user_*'
+        agenda: <sentence()>
+        noteTaker: '@user_*'
+        notes: <text()>
+        duration: '80%? 60 : 120'

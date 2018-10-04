@@ -1,0 +1,6 @@
+App\Entity\Kuky:
+    kuky_{1..100}:
+        message: '<text()>'
+        author: '@user_*'
+        targets: '<numberBetween(1, 5)>x @user_*'
+        createdAt: '<dateTimeBetween("-1 year", "now")>'

@@ -7,6 +7,14 @@ App\Entity\LeaderInvolvement:
         palatability: <criticality()>
         toughness: <criticality()>
         responsibility: '@responsibility*'
+    leaderInvolvement_responsibility_leny_googleSuiteManager:
+        user: '@user_leny'
+        mentalCharge: "minor"
+        timeConsumator: "medium"
+        anxiety: "minor"
+        palatability: "minor"
+        toughness: "minor"
+        responsibility: '@responsibility_leny_googleSuiteManager'
 
 App\Entity\AdvisorInvolvement:
     advisorInvolvement_{1..150}:

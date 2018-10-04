@@ -1,21 +1,33 @@
 App\Entity\CoreValue:
-    coreValue_quality:
-        name: "Qualité"
+    coreValue_proud:
+        name: "Fierté"
         color: 2e243f
         mantra: <sentence()>
-    coreValue_transparence:
-        name: "Transparence"
+    coreValue_smart:
+        name: "Intélligence"
         color: 5fafe2
         mantra: <sentence()>
-    coreValue_Creativite:
-        name: "Créativité"
+    coreValue_boldness:
+        name: "Audace"
         color: e26466
         mantra: <sentence()>
-    coreValue_Innovation:
-        name: "Innovation"
+    coreValue_transparency:
+        name: "Transparence"
         color: f4a15f
         mantra: <sentence()>
-    coreValue_engagement:
-        name: "Engagement"
+    coreValue_share:
+        name: "Partage"
         color: 4fb28f
+        mantra: <sentence()>
+    coreValue_trust:
+        name: "Confiance"
+        color: 2e243f
+        mantra: <sentence()>
+    coreValue_honesty:
+        name: "Honneteté"
+        color: 2e243f
+        mantra: <sentence()>
+    coreValue_kindness:
+        name: "Bienveillance"
+        color: 5fafe2
         mantra: <sentence()>
