@@ -3,6 +3,7 @@
 namespace App\Translation;
 
 use App\DBAL\Types\CriticalityType;
+use App\DBAL\Types\DegreeConfidenceType;
 use App\DBAL\Types\RecurrenceType;
 use JMS\TranslationBundle\Model\Message;
 use JMS\TranslationBundle\Translation\TranslationContainerInterface;
@@ -30,12 +31,16 @@ class DynamicTranslations implements TranslationContainerInterface
         $doctrineEnums = [
             CriticalityType::class,
             RecurrenceType::class,
+            DegreeConfidenceType::class,
         ];
 
         foreach ($doctrineEnums as $doctrineEnum) {
             foreach ($doctrineEnum::getChoices() as $label => $value) {
                 $messages[] = new Message($label);
             }
+        }
+        foreach (DegreeConfidenceType::getValues() as $label => $value) {
+            $messages[] = new Message(sprintf('admin.degree.confidence.emojiOnly.%s', $label));
         }
 
         return $messages;

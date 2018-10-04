@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:jms="urn:jms:translation" version="1.2">
-  <file date="2018-09-21T23:46:19Z" source-language="en" target-language="fr" datatype="plaintext" original="not.available">
+  <file date="2018-09-29T00:20:49Z" source-language="en" target-language="fr" datatype="plaintext" original="not.available">
     <header>
       <tool tool-id="JMSTranslationBundle" tool-name="JMSTranslationBundle" tool-version="1.1.0-DEV"/>
       <note>The source node in most cases contains the sample message as written by the developer. If it looks like a dot-delimitted string such as "form.label.firstname", then the developer has not provided a default message.</note>
@@ -41,6 +41,70 @@
         <target>Nom</target>
         <jms:reference-file>easy_admin.yaml</jms:reference-file>
       </trans-unit>
+      <trans-unit id="b46ec3069d007c2805e3a7a83ae5b1d18705047f" resname="admin.degree.confidence.0">
+        <source>admin.degree.confidence.0</source>
+        <target>😥 Découragé</target>
+      </trans-unit>
+      <trans-unit id="487ab7e4354e4c05a525356a45b7cde2dc6a666d" resname="admin.degree.confidence.1">
+        <source>admin.degree.confidence.1</source>
+        <target>😨 Angoissé</target>
+      </trans-unit>
+      <trans-unit id="6a20acac1026c0f2ce6686027e23db8c6f3c8550" resname="admin.degree.confidence.2">
+        <source>admin.degree.confidence.2</source>
+        <target>😧 Anxieux</target>
+      </trans-unit>
+      <trans-unit id="792ef90e6458d99b2a42479a1f840e8e6a9cd151" resname="admin.degree.confidence.3">
+        <source>admin.degree.confidence.3</source>
+        <target>😟 Incertain</target>
+      </trans-unit>
+      <trans-unit id="54f1cfccf91227cf24f5e75a77a68ab4a31406e3" resname="admin.degree.confidence.4">
+        <source>admin.degree.confidence.4</source>
+        <target>😌 Rassuré</target>
+      </trans-unit>
+      <trans-unit id="e956d37aa60b3d44a812c183cba0930f0f77df1b" resname="admin.degree.confidence.5">
+        <source>admin.degree.confidence.5</source>
+        <target>🙂 Serein</target>
+      </trans-unit>
+      <trans-unit id="d986d4b42d977ece488473c11ce8828c99a7a0f5" resname="admin.degree.confidence.6">
+        <source>admin.degree.confidence.6</source>
+        <target>😏 Confiant</target>
+      </trans-unit>
+      <trans-unit id="1addb5d08f0a601f567621e801f9f5f64b5bf57b" resname="admin.degree.confidence.7">
+        <source>admin.degree.confidence.7</source>
+        <target>😎 Certain</target>
+      </trans-unit>
+      <trans-unit id="07db7e8de003733ca0c03a9a470d0d905af92d94" resname="admin.degree.confidence.emojiOnly.0">
+        <source>admin.degree.confidence.emojiOnly.0</source>
+        <target>😥</target>
+      </trans-unit>
+      <trans-unit id="11959fc0732439d0265f6d269d2724f6bf6e0228" resname="admin.degree.confidence.emojiOnly.1">
+        <source>admin.degree.confidence.emojiOnly.1</source>
+        <target>😨</target>
+      </trans-unit>
+      <trans-unit id="ee55e0ca403a09dad1e6766cf46d76ddba2c3e86" resname="admin.degree.confidence.emojiOnly.2">
+        <source>admin.degree.confidence.emojiOnly.2</source>
+        <target>😧</target>
+      </trans-unit>
+      <trans-unit id="99cd34d01f5e632e4a5439fdeb26f7bfa428da76" resname="admin.degree.confidence.emojiOnly.3">
+        <source>admin.degree.confidence.emojiOnly.3</source>
+        <target>😟</target>
+      </trans-unit>
+      <trans-unit id="10f3328531a030d046f9e74044bcf3f89c4eb4ba" resname="admin.degree.confidence.emojiOnly.4">
+        <source>admin.degree.confidence.emojiOnly.4</source>
+        <target>😌</target>
+      </trans-unit>
+      <trans-unit id="d74be6cdc4e935ba7b7049962fb438dc0f7c252f" resname="admin.degree.confidence.emojiOnly.5">
+        <source>admin.degree.confidence.emojiOnly.5</source>
+        <target>🙂</target>
+      </trans-unit>
+      <trans-unit id="da7e15f63369ef1221fbc924d3af9dc00ad32932" resname="admin.degree.confidence.emojiOnly.6">
+        <source>admin.degree.confidence.emojiOnly.6</source>
+        <target>😏</target>
+      </trans-unit>
+      <trans-unit id="ca23ef94691b069e7167ed73b9112891c09cb5b2" resname="admin.degree.confidence.emojiOnly.7">
+        <source>admin.degree.confidence.emojiOnly.7</source>
+        <target>😎</target>
+      </trans-unit>
       <trans-unit id="b577ca8f4be857b71df2bdeb83271036a59b9179" resname="admin.edit">
         <source>admin.edit</source>
         <target>Modifier</target>
@@ -76,6 +140,11 @@
         <target>Les objectifs ne sont pas obligatoires et ne sont pas pour tout le monde. Certains y voient une manière de se dépasser, de s'améliorer, d'autres y voient un outil de mise sous pression inutile pour faire son travail. Se mettre ou non des objectifs est donc propre à chacun et personne ne devrait s'en occuper.</target>
         <jms:reference-file>easy_admin.yaml</jms:reference-file>
       </trans-unit>
+      <trans-unit id="3d868eb9403f8c8fdfa381f3738903dad49aa8b6" resname="admin.goal.id">
+        <source>admin.goal.id</source>
+        <target>#</target>
+        <jms:reference-file>easy_admin.yaml</jms:reference-file>
+      </trans-unit>
       <trans-unit id="0fbb00b01847abcce23011a0dbd4d327936f656d" resname="admin.goal.measurement">
         <source>admin.goal.measurement</source>
         <target>Valeur chiffré</target>
@@ -86,6 +155,11 @@
         <target>Nom</target>
         <jms:reference-file>easy_admin.yaml</jms:reference-file>
       </trans-unit>
+      <trans-unit id="9a91f8eb94867c3c6cc45fee09b0fe22999114b2" resname="admin.goal.parent">
+        <source>admin.goal.parent</source>
+        <target>Objectif parent</target>
+        <jms:reference-file>easy_admin.yaml</jms:reference-file>
+      </trans-unit>
       <trans-unit id="6876efe0d70b380265b353f7bfc353b5946e457e" resname="admin.goal.plannedDate">
         <source>admin.goal.plannedDate</source>
         <target>Date envisagée</target>
@@ -93,12 +167,37 @@
       </trans-unit>
       <trans-unit id="0ab3faa66533f9640bac4b2733641d1056288972" resname="admin.goal.recurrence">
         <source>admin.goal.recurrence</source>
-        <target>Recurrence</target>
+        <target>Fréquence d'évaluation</target>
+        <jms:reference-file>easy_admin.yaml</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="c359c6a4b29a1caa5735c23457697563216b32d9" resname="admin.goal.user">
+        <source>admin.goal.user</source>
+        <target>admin.goal.user</target>
         <jms:reference-file>easy_admin.yaml</jms:reference-file>
       </trans-unit>
       <trans-unit id="42ceaf825cbf3df4ea0a3e39e20cc7e7161a39f9" resname="admin.goalEvaluation">
         <source>admin.goalEvaluation</source>
         <target>Evaluations</target>
+        <jms:reference-file>easy_admin.yaml</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="9f50a415d67700ffd93c988641422000fe325ef9" resname="admin.goalEvaluation.confidence">
+        <source>admin.goalEvaluation.confidence</source>
+        <target>Confiance</target>
+        <jms:reference-file>easy_admin.yaml</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="c2d1e21ad4e4cdba2b508be065adb23a2f58d830" resname="admin.goalEvaluation.goal">
+        <source>admin.goalEvaluation.goal</source>
+        <target>Objectif</target>
+        <jms:reference-file>easy_admin.yaml</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="2bbc4af72d6476ae9d72d96bc12abb5931511040" resname="admin.goalEvaluation.id">
+        <source>admin.goalEvaluation.id</source>
+        <target>#</target>
+        <jms:reference-file>easy_admin.yaml</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="789cafcc06284c8a7c230df18126252d3a4fb8d6" resname="admin.goalEvaluation.value">
+        <source>admin.goalEvaluation.value</source>
+        <target>Valeur</target>
         <jms:reference-file>easy_admin.yaml</jms:reference-file>
       </trans-unit>
       <trans-unit id="0a8ba0dbcaddd2b93a63cd48affb14be447cad48" resname="admin.level.critical.label">
@@ -112,6 +211,11 @@
       <trans-unit id="6da2a10829493b27429190fbdbabd1f7d575e0ec" resname="admin.level.minor.label">
         <source>admin.level.minor.label</source>
         <target>Mineur</target>
+      </trans-unit>
+      <trans-unit id="f6bc94de0dc8ca413ffecbc2a77752774a20add9" resname="admin.meeting">
+        <source>admin.meeting</source>
+        <target>Réunions</target>
+        <jms:reference-file>easy_admin.yaml</jms:reference-file>
       </trans-unit>
       <trans-unit id="963321ee98648585399bd80f5d9c6b4e78d896fd" resname="admin.menu.coreValue">
         <source>admin.menu.coreValue</source>
@@ -128,9 +232,24 @@
         <target>Evaluations</target>
         <jms:reference-file>easy_admin.yaml</jms:reference-file>
       </trans-unit>
+      <trans-unit id="f497621df960f4fac2a1328a6d79d971d2f54cbe" resname="admin.menu.kukies">
+        <source>admin.menu.kukies</source>
+        <target>Kukies</target>
+        <jms:reference-file>easy_admin.yaml</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="792ec4a198ef13bf37ff3b6bcf39396c1711781f" resname="admin.menu.meeting">
+        <source>admin.menu.meeting</source>
+        <target>Réunions</target>
+        <jms:reference-file>easy_admin.yaml</jms:reference-file>
+      </trans-unit>
       <trans-unit id="20e65e8d07834d385e3ac54db11b6dca36bc6bce" resname="admin.menu.responsibility">
         <source>admin.menu.responsibility</source>
-        <target>Responsibilités</target>
+        <target>Responsabilités</target>
+        <jms:reference-file>easy_admin.yaml</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="519b7dbac596145ba00661ffd998794e6a0e1d1a" resname="admin.menu.teams">
+        <source>admin.menu.teams</source>
+        <target>Équipes</target>
         <jms:reference-file>easy_admin.yaml</jms:reference-file>
       </trans-unit>
       <trans-unit id="21639c75ddf9039147b9e06f026484bd0fc60a8d" resname="admin.menu.users">
@@ -204,6 +323,31 @@
         <target>Nom</target>
         <jms:reference-file>easy_admin.yaml</jms:reference-file>
       </trans-unit>
+      <trans-unit id="b73841b605ef12b0afa71ff7303225b45db8bbac" resname="admin.team">
+        <source>admin.team</source>
+        <target>Équipes</target>
+        <jms:reference-file>easy_admin.yaml</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="722e0faa9f2aeae7b1f256908872a2c59b51edc3" resname="admin.team.id">
+        <source>admin.team.id</source>
+        <target>#</target>
+        <jms:reference-file>easy_admin.yaml</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="231acb357c21394216a56dfc2dfa5307f22d9608" resname="admin.team.members">
+        <source>admin.team.members</source>
+        <target>Membres</target>
+        <jms:reference-file>easy_admin.yaml</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="5136a8cdcb9ce4f98abadbcd0a557b9a34b93003" resname="admin.team.name">
+        <source>admin.team.name</source>
+        <target>Nom</target>
+        <jms:reference-file>easy_admin.yaml</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="8d39c725f59b98516cffc7dd755978f7bf7027ca" resname="admin.team.parent">
+        <source>admin.team.parent</source>
+        <target>Équipe parente</target>
+        <jms:reference-file>easy_admin.yaml</jms:reference-file>
+      </trans-unit>
       <trans-unit id="1d43af5cfdb67ab0c787c1c405faad9e7b7a59ef" resname="admin.user">
         <source>admin.user</source>
         <target>Utilisateurs</target>
@@ -237,6 +381,11 @@
       <trans-unit id="2e5cfc466b15da537899638afe5994929b981154" resname="admin.user.plainPassword">
         <source>admin.user.plainPassword</source>
         <target>Mot de passe</target>
+        <jms:reference-file>easy_admin.yaml</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="5140cfde4d36ca8e4f60f8a30799cacc4785a9ef" resname="admin.userEvaluation.user">
+        <source>admin.userEvaluation.user</source>
+        <target>Auteur</target>
         <jms:reference-file>easy_admin.yaml</jms:reference-file>
       </trans-unit>
       <trans-unit id="1bf2b6d62b1aa95f556ad419338646688ba92402" resname="app.menu.goals">

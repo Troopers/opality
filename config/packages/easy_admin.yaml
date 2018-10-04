@@ -6,14 +6,17 @@ easy_admin:
             favicon: '/favicons/favicon-96x96.png'
             css:
                 - 'build/admin.css'
+                - 'https://afeld.github.io/emoji-css/emoji.css'
                 - 'https://fonts.googleapis.com/css?family=Montserrat'
         menu:
-        - { label: 'admin.menu.goal', entity: 'Goal', icon: 'bullseye' }
-        - { label: 'admin.menu.goalEvaluation', entity: 'GoalEvaluation', icon: 'check-square-o' }
-        - { label: 'admin.menu.coreValue', entity: 'CoreValue', icon: 'heartbeat' }
-        - { label: 'admin.menu.responsibility', entity: 'Responsibility', icon: 'black-tie' }
-        - { label: 'admin.menu.users', entity: 'User', icon: 'users' }
-
+        - { label: 'admin.menu.goal', entity: 'Goal', icon: ' em em-muscle' }
+        - { label: 'admin.menu.goalEvaluation', entity: 'GoalEvaluation', icon: ' em em-100' }
+        - { label: 'admin.menu.coreValue', entity: 'CoreValue', icon: ' em em-heart' }
+        - { label: 'admin.menu.responsibility', entity: 'Responsibility', icon: ' em em-point_up' }
+        - { label: 'admin.menu.meeting', entity: 'Meeting', icon: ' em em-speech_balloon' }
+        - { label: 'admin.menu.users', entity: 'User', icon: ' em em-bust_in_silhouette' }
+        - { label: 'admin.menu.teams', entity: 'Team', icon: ' em em-busts_in_silhouette' }
+        - { label: 'admin.menu.kukies', entity: 'Kuky', icon: ' em em-cookie' }
     entities:
         CoreValue:
             class: 'App\Entity\CoreValue'
@@ -35,7 +38,20 @@ easy_admin:
                     - { property: 'goals', label: 'admin.core_value.goals' }
         GoalEvaluation:
             class: 'App\Entity\GoalEvaluation'
-            label: 'admin.goalEvaluation'
+            list:
+                label: 'admin.goalEvaluation'
+                fields:
+                    - { property: 'id', label: 'admin.goalEvaluation.id' }
+                    - { property: 'goal', label: 'admin.goalEvaluation.goal' }
+                    - { property: 'user', label: 'admin.userEvaluation.user' }
+                    - { property: 'value', label: 'admin.goalEvaluation.value' }
+                    - { property: 'confidence', label: 'admin.goalEvaluation.confidence', template: 'admin/confidence.html.twig' }
+            form:
+                fields:
+                    - { property: 'value', label: 'admin.goalEvaluation.value' }
+                    - { property: 'confidence', label: 'admin.goalEvaluation.confidence', template: 'admin/confidence.html.twig' }
+                    - { property: 'goal', label: 'admin.goalEvaluation.goal' }
+                    - { property: 'user', label: 'admin.userEvaluation.user' }
         Goal:
             class: 'App\Entity\Goal'
             label: 'admin.goal'
@@ -43,8 +59,11 @@ easy_admin:
                 help: 'admin.goal.help'
                 title: 'admin.goal'
                 fields:
+                    - { property: 'id', label: 'admin.goal.id' }
                     - { property: 'name', label: 'admin.goal.name' }
                     - { property: 'coreValues', label: 'admin.goal.coreValues' }
+                    - { property: 'parent', label: 'admin.goal.parent' }
+                    - { property: 'plannedDate', label: 'admin.goal.plannedDate' }
             form:
                 fields:
                     - { property: 'name', label: 'admin.goal.name' }
@@ -53,7 +72,9 @@ easy_admin:
                     - { property: 'measurement', label: 'admin.goal.measurement', type_options: { required: false } }
                     - { property: 'attainable', label: 'admin.goal.attainable' }
                     - { property: 'ambitious', label: 'admin.goal.ambitious' }
+                    - { property: 'parent', label: 'admin.goal.parent' }
                     - { property: 'plannedDate', label: 'admin.goal.plannedDate' }
+                    - { property: 'user', label: 'admin.goal.user' }
                     - { property: 'coreValues', label: 'admin.goal.coreValues' }
         Responsibility:
             class: 'App\Entity\Responsibility'
@@ -116,3 +137,23 @@ easy_admin:
                 title: 'admin.edit'
             new:
                 title: 'admin.new'
+        Meeting:
+            class: 'App\Entity\Meeting'
+            list:
+                title: 'admin.meeting'
+        Kuky:
+            class: 'App\Entity\Kuky'
+        Team:
+            class: 'App\Entity\Team'
+            list:
+                title: 'admin.team'
+                fields:
+                    - { property: 'id', label: 'admin.team.id' }
+                    - { property: 'name', label: 'admin.team.name' }
+                    - { property: 'members', label: 'admin.team.members' }
+                    - { property: 'parent', label: 'admin.team.parent' }
+            form:
+                fields:
+                    - { property: 'name', label: 'admin.team.name' }
+                    - { property: 'members', label: 'admin.team.members' }
+                    - { property: 'parent', label: 'admin.team.parent' }
