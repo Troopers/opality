@@ -3,12 +3,15 @@
 namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Gedmo\Timestampable\Traits\TimestampableEntity;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\GoalEvaluationRepository")
  */
 class GoalEvaluation
 {
+    use TimestampableEntity;
+
     /**
      * @ORM\Id()
      * @ORM\GeneratedValue()
@@ -28,9 +31,9 @@ class GoalEvaluation
     private $value;
 
     /**
-     * @ORM\Column(type="boolean")
+     * @ORM\Column(type="DegreeConfidenceType", length=55, nullable=true)
      */
-    private $done;
+    private $confidence;
 
     /**
      * @ORM\ManyToOne(targetEntity="App\Entity\User", inversedBy="goalEvaluations")
@@ -40,7 +43,7 @@ class GoalEvaluation
 
     public function __toString()
     {
-        return $this->getValue();
+        return (string) $this->getValue();
     }
 
     public function getId(): ?int
@@ -72,15 +75,21 @@ class GoalEvaluation
         return $this;
     }
 
-    public function getDone(): ?bool
+    /**
+     * @return mixed
+     */
+    public function getConfidence()
     {
-        return $this->done;
+        return $this->confidence;
     }
 
-    public function setDone(bool $done): self
+    /**
+     * @param mixed $confidence
+     * @return GoalEvaluation
+     */
+    public function setConfidence($confidence)
     {
-        $this->done = $done;
-
+        $this->confidence = $confidence;
         return $this;
     }
 

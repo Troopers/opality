@@ -66,6 +66,46 @@ class User implements UserInterface
      */
     private $picture;
 
+    /**
+     * @ORM\ManyToMany(targetEntity="App\Entity\Meeting", mappedBy="guests")
+     */
+    private $meetings;
+
+    /**
+     * @ORM\ManyToMany(targetEntity="App\Entity\Team", mappedBy="members")
+     */
+    private $teams;
+
+    /**
+     * @ORM\ManyToMany(targetEntity="App\Entity\Goal", mappedBy="users")
+     */
+    private $goals;
+
+    /**
+     * @ORM\OneToMany(targetEntity="App\Entity\GoalEvaluation", mappedBy="user")
+     */
+    private $goalEvaluations;
+
+    /**
+     * @ORM\OneToMany(targetEntity="App\Entity\Kuky", mappedBy="author")
+     */
+    private $givenKukies;
+
+    /**
+     * @ORM\ManyToMany(targetEntity="App\Entity\Kuky", mappedBy="targets")
+     */
+    private $receivedKukies;
+
+    public function __construct()
+    {
+        $this->meetings = new ArrayCollection();
+        $this->teams = new ArrayCollection();
+        $this->goals = new ArrayCollection();
+        $this->goalEvaluations = new ArrayCollection();
+        $this->givenKukies = new ArrayCollection();
+        $this->receivedKukies = new ArrayCollection();
+    }
+
     public function __toString(): ?string
     {
         return $this->firstname . ' '. $this->lastname;
@@ -214,6 +254,180 @@ class User implements UserInterface
     public function setPicture(?string $picture): self
     {
         $this->picture = $picture;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|Meeting[]
+     */
+    public function getMeetings(): Collection
+    {
+        return $this->meetings;
+    }
+
+    public function addMeeting(Meeting $meeting): self
+    {
+        if (!$this->meetings->contains($meeting)) {
+            $this->meetings[] = $meeting;
+            $meeting->addGuest($this);
+        }
+
+        return $this;
+    }
+
+    public function removeMeeting(Meeting $meeting): self
+    {
+        if ($this->meetings->contains($meeting)) {
+            $this->meetings->removeElement($meeting);
+            $meeting->removeGuest($this);
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|Team[]
+     */
+    public function getTeams(): Collection
+    {
+        return $this->teams;
+    }
+
+    public function addTeam(Team $team): self
+    {
+        if (!$this->teams->contains($team)) {
+            $this->teams[] = $team;
+            $team->addMember($this);
+        }
+
+        return $this;
+    }
+
+    public function removeTeam(Team $team): self
+    {
+        if ($this->teams->contains($team)) {
+            $this->teams->removeElement($team);
+            $team->removeMember($this);
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|Goal[]
+     */
+    public function getGoals(): Collection
+    {
+        return $this->goals;
+    }
+
+    public function addGoal(Goal $goal): self
+    {
+        if (!$this->goals->contains($goal)) {
+            $this->goals[] = $goal;
+            $goal->addUser($this);
+        }
+
+        return $this;
+    }
+
+    public function removeGoal(Goal $goal): self
+    {
+        if ($this->goals->contains($goal)) {
+            $this->goals->removeElement($goal);
+            $goal->removeUser($this);
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|GoalEvaluation[]
+     */
+    public function getGoalEvaluations(): Collection
+    {
+        return $this->goalEvaluations;
+    }
+
+    public function addGoalEvaluation(GoalEvaluation $goalEvaluation): self
+    {
+        if (!$this->goalEvaluations->contains($goalEvaluation)) {
+            $this->goalEvaluations[] = $goalEvaluation;
+            $goalEvaluation->setUser($this);
+        }
+
+        return $this;
+    }
+
+    public function removeGoalEvaluation(GoalEvaluation $goalEvaluation): self
+    {
+        if ($this->goalEvaluations->contains($goalEvaluation)) {
+            $this->goalEvaluations->removeElement($goalEvaluation);
+            // set the owning side to null (unless already changed)
+            if ($goalEvaluation->getUser() === $this) {
+                $goalEvaluation->setUser(null);
+            }
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|Kuky[]
+     */
+    public function getGivenKukies(): Collection
+    {
+        return $this->givenKukies;
+    }
+
+    public function addGivenKuky(Kuky $givenKuky): self
+    {
+        if (!$this->givenKukies->contains($givenKuky)) {
+            $this->givenKukies[] = $givenKuky;
+            $givenKuky->setAuthor($this);
+        }
+
+        return $this;
+    }
+
+    public function removeGivenKuky(Kuky $givenKuky): self
+    {
+        if ($this->givenKukies->contains($givenKuky)) {
+            $this->givenKukies->removeElement($givenKuky);
+            // set the owning side to null (unless already changed)
+            if ($givenKuky->getAuthor() === $this) {
+                $givenKuky->setAuthor(null);
+            }
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|Kuky[]
+     */
+    public function getReceivedKukies(): Collection
+    {
+        return $this->receivedKukies;
+    }
+
+    public function addReceivedKuky(Kuky $receivedKuky): self
+    {
+        if (!$this->receivedKukies->contains($receivedKuky)) {
+            $this->receivedKukies[] = $receivedKuky;
+            $receivedKuky->addTarget($this);
+        }
+
+        return $this;
+    }
+
+    public function removeReceivedKuky(Kuky $receivedKuky): self
+    {
+        if ($this->receivedKukies->contains($receivedKuky)) {
+            $this->receivedKukies->removeElement($receivedKuky);
+            $receivedKuky->removeTarget($this);
+        }
 
         return $this;
     }

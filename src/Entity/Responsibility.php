@@ -6,6 +6,7 @@ use ApiPlatform\Core\Annotation\ApiResource;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use Gedmo\Timestampable\Traits\TimestampableEntity;
 
 /**
  * @ApiResource()
@@ -13,6 +14,8 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class Responsibility
 {
+    use TimestampableEntity;
+
     /**
      * @ORM\Id()
      * @ORM\GeneratedValue()
@@ -50,10 +53,16 @@ class Responsibility
      */
     private $advisorInvolvements;
 
+    /**
+     * @ORM\ManyToMany(targetEntity="App\Entity\Goal", inversedBy="responsibilities")
+     */
+    private $Goals;
+
     public function __construct()
     {
         $this->leaderInvolvements = new ArrayCollection();
         $this->advisorInvolvements = new ArrayCollection();
+        $this->Goals = new ArrayCollection();
     }
 
     /**
@@ -174,6 +183,32 @@ class Responsibility
             if ($advisorInvolvement->getResponsibility() === $this) {
                 $advisorInvolvement->setResponsibility(null);
             }
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|Goal[]
+     */
+    public function getGoals(): Collection
+    {
+        return $this->Goals;
+    }
+
+    public function addGoal(Goal $goal): self
+    {
+        if (!$this->Goals->contains($goal)) {
+            $this->Goals[] = $goal;
+        }
+
+        return $this;
+    }
+
+    public function removeGoal(Goal $goal): self
+    {
+        if ($this->Goals->contains($goal)) {
+            $this->Goals->removeElement($goal);
         }
 
         return $this;
