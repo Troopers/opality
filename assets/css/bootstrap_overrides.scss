@@ -1,0 +1,12 @@
+.badge {
+  color: white;
+  &.badge-critical, &.badge-2 {
+    background-color: $red;
+  }
+  &.badge-medium, &.badge-1 {
+    background-color: $orange;
+  }
+  &.badge-minor, &.badge-0 {
+    background-color: $blue;
+  }
+}

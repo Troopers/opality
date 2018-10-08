@@ -1,4 +1,5 @@
 @import 'variable';
+@import 'bootstrap_overrides';
 
 .easyadmin {
     .main-header {
@@ -21,17 +22,6 @@
             height: 30px;
             content: "";
             margin-top: 10px;
-        }
-    }
-    .badge {
-        &.badge-critical {
-            background-color: $red;
-        }
-        &.badge-medium {
-            background-color: $orange;
-        }
-        &.badge-minor {
-            background-color: $blue;
         }
     }
 }
