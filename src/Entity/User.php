@@ -96,6 +96,16 @@ class User implements UserInterface
      */
     private $receivedKukies;
 
+    /**
+     * @ORM\OneToMany(targetEntity="App\Entity\LeaderInvolvement", mappedBy="user")
+     */
+    private $leaderInvolvements;
+
+    /**
+     * @ORM\OneToMany(targetEntity="App\Entity\AdvisorInvolvement", mappedBy="user")
+     */
+    private $advisorInvolvements;
+
     public function __construct()
     {
         $this->meetings = new ArrayCollection();
@@ -430,5 +440,21 @@ class User implements UserInterface
         }
 
         return $this;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getLeaderInvolvements()
+    {
+        return $this->leaderInvolvements;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getAdvisorInvolvements()
+    {
+        return $this->advisorInvolvements;
     }
 }

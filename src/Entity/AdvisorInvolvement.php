@@ -19,6 +19,12 @@ class AdvisorInvolvement extends Involvement
      */
     private $responsibility;
 
+    /**
+     * @ORM\ManyToOne(targetEntity="App\Entity\User", inversedBy="advisorInvolvements")
+     * @ORM\JoinColumn(nullable=false)
+     */
+    protected $user;
+
     public function getResponsibility(): ?Responsibility
     {
         return $this->responsibility;
@@ -27,6 +33,17 @@ class AdvisorInvolvement extends Involvement
     public function setResponsibility(?Responsibility $responsibility): self
     {
         $this->responsibility = $responsibility;
+
+        return $this;
+    }
+    public function getUser(): ?User
+    {
+        return $this->user;
+    }
+
+    public function setUser(?User $user): self
+    {
+        $this->user = $user;
 
         return $this;
     }

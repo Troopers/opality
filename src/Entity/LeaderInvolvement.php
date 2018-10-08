@@ -40,8 +40,15 @@ class LeaderInvolvement extends Involvement
 
     /**
      * @ORM\ManyToOne(targetEntity="App\Entity\Responsibility", inversedBy="leaderInvolvements")
+     * @ORM\OrderBy({"criticality" = "DESC"})
      */
     private $responsibility;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="App\Entity\User", inversedBy="leaderInvolvements")
+     * @ORM\JoinColumn(nullable=false)
+     */
+    protected $user;
 
     public function getMentalCharge(): ?string
     {
@@ -111,6 +118,18 @@ class LeaderInvolvement extends Involvement
     public function setResponsibility(?Responsibility $responsibility): self
     {
         $this->responsibility = $responsibility;
+
+        return $this;
+    }
+
+    public function getUser(): ?User
+    {
+        return $this->user;
+    }
+
+    public function setUser(?User $user): self
+    {
+        $this->user = $user;
 
         return $this;
     }

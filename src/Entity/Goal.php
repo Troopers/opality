@@ -85,12 +85,12 @@ class Goal
     private $evaluations;
 
     /**
-     * @ORM\ManyToMany(targetEntity="App\Entity\Responsibility", mappedBy="Goals")
+     * @ORM\ManyToMany(targetEntity="App\Entity\Responsibility", mappedBy="goals")
      */
     private $responsibilities;
 
     /**
-     * @ORM\ManyToOne(targetEntity="App\Entity\Goal")
+     * @ORM\ManyToOne(targetEntity="App\Entity\Goal", inversedBy="children")
      */
     private $parent;
 
