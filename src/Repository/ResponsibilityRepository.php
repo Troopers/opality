@@ -19,32 +19,13 @@ class ResponsibilityRepository extends ServiceEntityRepository
         parent::__construct($registry, Responsibility::class);
     }
 
-//    /**
-//     * @return Responsibility[] Returns an array of Responsibility objects
-//     */
-    /*
-    public function findByExampleField($value)
+    public function findWithInvolvements()
     {
         return $this->createQueryBuilder('r')
-            ->andWhere('r.exampleField = :val')
-            ->setParameter('val', $value)
-            ->orderBy('r.id', 'ASC')
-            ->setMaxResults(10)
-            ->getQuery()
-            ->getResult()
-        ;
-    }
-    */
+            ->leftJoin('r.leaderInvolvements', 'l')->addSelect('l')
+            ->leftJoin('r.advisorInvolvements', 'a')->addSelect('a')
+            ->addOrderBy('r.criticality', 'DESC')
+            ->getQuery()->getResult();
 
-    /*
-    public function findOneBySomeField($value): ?Responsibility
-    {
-        return $this->createQueryBuilder('r')
-            ->andWhere('r.exampleField = :val')
-            ->setParameter('val', $value)
-            ->getQuery()
-            ->getOneOrNullResult()
-        ;
     }
-    */
 }

@@ -7,13 +7,13 @@ use Fresh\DoctrineEnumBundle\DBAL\Types\AbstractEnumType;
 
 final class CriticalityType extends AbstractEnumType
 {
-    const MINOR = 'minor';
-    const MEDIUM = 'medium';
-    const CRITICAL =  'critical';
+    const MINOR = 0;
+    const MEDIUM = 1;
+    const CRITICAL =  2;
 
     protected static $choices = [
-        self::MINOR => 'admin.level.minor.label',
-        self::MEDIUM => 'admin.level.medium.label',
-        self::CRITICAL => 'admin.level.critical.label',
+        self::MINOR => 'criticality.'.self::MINOR,
+        self::MEDIUM => 'criticality.'.self::MEDIUM,
+        self::CRITICAL => 'criticality.'.self::CRITICAL,
     ];
 }

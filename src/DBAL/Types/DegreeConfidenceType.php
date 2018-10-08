@@ -17,13 +17,13 @@ final class DegreeConfidenceType extends AbstractEnumType
     const CERTAIN =  7;
 
     protected static $choices = [
-        self::DISCOURAGED => 'admin.degree.confidence.'.self::DISCOURAGED,
-        self::ANGUISH => 'admin.degree.confidence.'.self::ANGUISH,
-        self::ANXIOUS => 'admin.degree.confidence.'.self::ANXIOUS,
-        self::UNCERTAIN => 'admin.degree.confidence.'.self::UNCERTAIN,
-        self::EASED => 'admin.degree.confidence.'.self::EASED,
-        self::SERENE => 'admin.degree.confidence.'.self::SERENE,
-        self::CONFIDENT => 'admin.degree.confidence.'.self::CONFIDENT,
-        self::CERTAIN => 'admin.degree.confidence.'.self::CERTAIN,
+        self::DISCOURAGED => 'degree.confidence.'.self::DISCOURAGED,
+        self::ANGUISH => 'degree.confidence.'.self::ANGUISH,
+        self::ANXIOUS => 'degree.confidence.'.self::ANXIOUS,
+        self::UNCERTAIN => 'degree.confidence.'.self::UNCERTAIN,
+        self::EASED => 'degree.confidence.'.self::EASED,
+        self::SERENE => 'degree.confidence.'.self::SERENE,
+        self::CONFIDENT => 'degree.confidence.'.self::CONFIDENT,
+        self::CERTAIN => 'degree.confidence.'.self::CERTAIN,
     ];
 }

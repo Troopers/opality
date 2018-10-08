@@ -15,6 +15,7 @@ class AdvisorInvolvement extends Involvement
 {
     /**
      * @ORM\ManyToOne(targetEntity="App\Entity\Responsibility", inversedBy="advisorInvolvements")
+     * @ORM\OrderBy({"criticality" = "DESC"})
      */
     private $responsibility;
 

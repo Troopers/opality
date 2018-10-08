@@ -41,68 +41,68 @@
         <target>Nom</target>
         <jms:reference-file>easy_admin.yaml</jms:reference-file>
       </trans-unit>
-      <trans-unit id="b46ec3069d007c2805e3a7a83ae5b1d18705047f" resname="admin.degree.confidence.0">
-        <source>admin.degree.confidence.0</source>
+      <trans-unit id="b46ec3069d007c2805e3a7a83ae5b1d18705047f" resname="degree.confidence.0">
+        <source>degree.confidence.0</source>
         <target>😥 Découragé</target>
       </trans-unit>
-      <trans-unit id="487ab7e4354e4c05a525356a45b7cde2dc6a666d" resname="admin.degree.confidence.1">
-        <source>admin.degree.confidence.1</source>
+      <trans-unit id="487ab7e4354e4c05a525356a45b7cde2dc6a666d" resname="degree.confidence.1">
+        <source>degree.confidence.1</source>
         <target>😨 Angoissé</target>
       </trans-unit>
-      <trans-unit id="6a20acac1026c0f2ce6686027e23db8c6f3c8550" resname="admin.degree.confidence.2">
-        <source>admin.degree.confidence.2</source>
+      <trans-unit id="6a20acac1026c0f2ce6686027e23db8c6f3c8550" resname="degree.confidence.2">
+        <source>degree.confidence.2</source>
         <target>😧 Anxieux</target>
       </trans-unit>
-      <trans-unit id="792ef90e6458d99b2a42479a1f840e8e6a9cd151" resname="admin.degree.confidence.3">
-        <source>admin.degree.confidence.3</source>
+      <trans-unit id="792ef90e6458d99b2a42479a1f840e8e6a9cd151" resname="degree.confidence.3">
+        <source>degree.confidence.3</source>
         <target>😟 Incertain</target>
       </trans-unit>
-      <trans-unit id="54f1cfccf91227cf24f5e75a77a68ab4a31406e3" resname="admin.degree.confidence.4">
-        <source>admin.degree.confidence.4</source>
+      <trans-unit id="54f1cfccf91227cf24f5e75a77a68ab4a31406e3" resname="degree.confidence.4">
+        <source>degree.confidence.4</source>
         <target>😌 Rassuré</target>
       </trans-unit>
-      <trans-unit id="e956d37aa60b3d44a812c183cba0930f0f77df1b" resname="admin.degree.confidence.5">
-        <source>admin.degree.confidence.5</source>
+      <trans-unit id="e956d37aa60b3d44a812c183cba0930f0f77df1b" resname="degree.confidence.5">
+        <source>degree.confidence.5</source>
         <target>🙂 Serein</target>
       </trans-unit>
-      <trans-unit id="d986d4b42d977ece488473c11ce8828c99a7a0f5" resname="admin.degree.confidence.6">
-        <source>admin.degree.confidence.6</source>
+      <trans-unit id="d986d4b42d977ece488473c11ce8828c99a7a0f5" resname="degree.confidence.6">
+        <source>degree.confidence.6</source>
         <target>😏 Confiant</target>
       </trans-unit>
-      <trans-unit id="1addb5d08f0a601f567621e801f9f5f64b5bf57b" resname="admin.degree.confidence.7">
-        <source>admin.degree.confidence.7</source>
+      <trans-unit id="1addb5d08f0a601f567621e801f9f5f64b5bf57b" resname="degree.confidence.7">
+        <source>degree.confidence.7</source>
         <target>😎 Certain</target>
       </trans-unit>
-      <trans-unit id="07db7e8de003733ca0c03a9a470d0d905af92d94" resname="admin.degree.confidence.emojiOnly.0">
-        <source>admin.degree.confidence.emojiOnly.0</source>
+      <trans-unit id="07db7e8de003733ca0c03a9a470d0d905af92d94" resname="degree.confidence.emojiOnly.0">
+        <source>degree.confidence.emojiOnly.0</source>
         <target>😥</target>
       </trans-unit>
-      <trans-unit id="11959fc0732439d0265f6d269d2724f6bf6e0228" resname="admin.degree.confidence.emojiOnly.1">
-        <source>admin.degree.confidence.emojiOnly.1</source>
+      <trans-unit id="11959fc0732439d0265f6d269d2724f6bf6e0228" resname="degree.confidence.emojiOnly.1">
+        <source>degree.confidence.emojiOnly.1</source>
         <target>😨</target>
       </trans-unit>
-      <trans-unit id="ee55e0ca403a09dad1e6766cf46d76ddba2c3e86" resname="admin.degree.confidence.emojiOnly.2">
-        <source>admin.degree.confidence.emojiOnly.2</source>
+      <trans-unit id="ee55e0ca403a09dad1e6766cf46d76ddba2c3e86" resname="degree.confidence.emojiOnly.2">
+        <source>degree.confidence.emojiOnly.2</source>
         <target>😧</target>
       </trans-unit>
-      <trans-unit id="99cd34d01f5e632e4a5439fdeb26f7bfa428da76" resname="admin.degree.confidence.emojiOnly.3">
-        <source>admin.degree.confidence.emojiOnly.3</source>
+      <trans-unit id="99cd34d01f5e632e4a5439fdeb26f7bfa428da76" resname="degree.confidence.emojiOnly.3">
+        <source>degree.confidence.emojiOnly.3</source>
         <target>😟</target>
       </trans-unit>
-      <trans-unit id="10f3328531a030d046f9e74044bcf3f89c4eb4ba" resname="admin.degree.confidence.emojiOnly.4">
-        <source>admin.degree.confidence.emojiOnly.4</source>
+      <trans-unit id="10f3328531a030d046f9e74044bcf3f89c4eb4ba" resname="degree.confidence.emojiOnly.4">
+        <source>degree.confidence.emojiOnly.4</source>
         <target>😌</target>
       </trans-unit>
-      <trans-unit id="d74be6cdc4e935ba7b7049962fb438dc0f7c252f" resname="admin.degree.confidence.emojiOnly.5">
-        <source>admin.degree.confidence.emojiOnly.5</source>
+      <trans-unit id="d74be6cdc4e935ba7b7049962fb438dc0f7c252f" resname="degree.confidence.emojiOnly.5">
+        <source>degree.confidence.emojiOnly.5</source>
         <target>🙂</target>
       </trans-unit>
-      <trans-unit id="da7e15f63369ef1221fbc924d3af9dc00ad32932" resname="admin.degree.confidence.emojiOnly.6">
-        <source>admin.degree.confidence.emojiOnly.6</source>
+      <trans-unit id="da7e15f63369ef1221fbc924d3af9dc00ad32932" resname="degree.confidence.emojiOnly.6">
+        <source>degree.confidence.emojiOnly.6</source>
         <target>😏</target>
       </trans-unit>
-      <trans-unit id="ca23ef94691b069e7167ed73b9112891c09cb5b2" resname="admin.degree.confidence.emojiOnly.7">
-        <source>admin.degree.confidence.emojiOnly.7</source>
+      <trans-unit id="ca23ef94691b069e7167ed73b9112891c09cb5b2" resname="degree.confidence.emojiOnly.7">
+        <source>degree.confidence.emojiOnly.7</source>
         <target>😎</target>
       </trans-unit>
       <trans-unit id="b577ca8f4be857b71df2bdeb83271036a59b9179" resname="admin.edit">
@@ -200,16 +200,16 @@
         <target>Valeur</target>
         <jms:reference-file>easy_admin.yaml</jms:reference-file>
       </trans-unit>
-      <trans-unit id="0a8ba0dbcaddd2b93a63cd48affb14be447cad48" resname="admin.level.critical.label">
-        <source>admin.level.critical.label</source>
+      <trans-unit id="0a8ba0dbcaddd2b93a63cd48affb14be447cad48" resname="criticality.2">
+        <source>criticality.2</source>
         <target>Critique</target>
       </trans-unit>
-      <trans-unit id="c051d133ec45862f5696d64ff18f3ede81f7c406" resname="admin.level.medium.label">
-        <source>admin.level.medium.label</source>
+      <trans-unit id="c051d133ec45862f5696d64ff18f3ede81f7c406" resname="criticality.1">
+        <source>criticality.1</source>
         <target>Moyen</target>
       </trans-unit>
-      <trans-unit id="6da2a10829493b27429190fbdbabd1f7d575e0ec" resname="admin.level.minor.label">
-        <source>admin.level.minor.label</source>
+      <trans-unit id="6da2a10829493b27429190fbdbabd1f7d575e0ec" resname="criticality.0">
+        <source>criticality.0</source>
         <target>Mineur</target>
       </trans-unit>
       <trans-unit id="f6bc94de0dc8ca413ffecbc2a77752774a20add9" resname="admin.meeting">
@@ -398,7 +398,7 @@
       </trans-unit>
       <trans-unit id="0c71cc891e020b3d63e7782d2ccc25a3a6df9b24" resname="app.menu.meeting">
         <source>app.menu.meeting</source>
-        <target>Réunion</target>
+        <target>Réunions</target>
       </trans-unit>
       <trans-unit id="e8b385866927267f1b45a7a3a2ea06dd454e8a09" resname="app.menu.roles">
         <source>app.menu.roles</source>
@@ -425,33 +425,33 @@
         <target>Utilisateur</target>
         <jms:reference-file line="16">/Form/AdvisorInvolvementType.php</jms:reference-file>
       </trans-unit>
-      <trans-unit id="2f0af0c8b34a35a7dddd64104c9b2789a8bc3e80" resname="form.leaderInvolvement.anxiety">
-        <source>form.leaderInvolvement.anxiety</source>
+      <trans-unit id="2f0af0c8b34a35a7dddd64104c9b2789a8bc3e80" resname="leaderInvolvement.anxiety">
+        <source>leaderInvolvement.anxiety</source>
         <target>Anxiogène</target>
         <jms:reference-file line="22">/Form/LeaderInvolvementType.php</jms:reference-file>
       </trans-unit>
-      <trans-unit id="89e9a82405c59c27afef1a3622326d954d559a0e" resname="form.leaderInvolvement.mentalCharge">
-        <source>form.leaderInvolvement.mentalCharge</source>
+      <trans-unit id="89e9a82405c59c27afef1a3622326d954d559a0e" resname="leaderInvolvement.mentalCharge">
+        <source>leaderInvolvement.mentalCharge</source>
         <target>Charge mentale</target>
         <jms:reference-file line="16">/Form/LeaderInvolvementType.php</jms:reference-file>
       </trans-unit>
-      <trans-unit id="d9b55e9600aa7563e7cf4abddb56e94dc7b15cae" resname="form.leaderInvolvement.palatability">
-        <source>form.leaderInvolvement.palatability</source>
+      <trans-unit id="d9b55e9600aa7563e7cf4abddb56e94dc7b15cae" resname="leaderInvolvement.palatability">
+        <source>leaderInvolvement.palatability</source>
         <target>Appétence</target>
         <jms:reference-file line="25">/Form/LeaderInvolvementType.php</jms:reference-file>
       </trans-unit>
-      <trans-unit id="29d61d55d0a084f314309a1f80952782fe880962" resname="form.leaderInvolvement.timeConsumator">
-        <source>form.leaderInvolvement.timeConsumator</source>
+      <trans-unit id="29d61d55d0a084f314309a1f80952782fe880962" resname="leaderInvolvement.timeConsumator">
+        <source>leaderInvolvement.timeConsumator</source>
         <target>Conso de temps</target>
         <jms:reference-file line="19">/Form/LeaderInvolvementType.php</jms:reference-file>
       </trans-unit>
-      <trans-unit id="4aa4951856c10a00d6a6f3e3396c42f77d12f551" resname="form.leaderInvolvement.toughness">
-        <source>form.leaderInvolvement.toughness</source>
+      <trans-unit id="4aa4951856c10a00d6a6f3e3396c42f77d12f551" resname="leaderInvolvement.toughness">
+        <source>leaderInvolvement.toughness</source>
         <target>Difficulté</target>
         <jms:reference-file line="28">/Form/LeaderInvolvementType.php</jms:reference-file>
       </trans-unit>
-      <trans-unit id="00b61dcdd23a1609d536f70213e2dd7d8c5e5e4b" resname="form.leaderInvolvement.user">
-        <source>form.leaderInvolvement.user</source>
+      <trans-unit id="00b61dcdd23a1609d536f70213e2dd7d8c5e5e4b" resname="leaderInvolvement.user">
+        <source>leaderInvolvement.user</source>
         <target>Utilisateur</target>
         <jms:reference-file line="31">/Form/LeaderInvolvementType.php</jms:reference-file>
       </trans-unit>

@@ -7,6 +7,6 @@ App\Entity\Responsibility:
     responsibility_leny_googleSuiteManager:
         name: "Gérer le compte Google Suite"
         description: "Créer / Supprimer un compte mail, configurer..."
-        criticality: "minor"
+        criticality: "0"
         enabled: '1'
 

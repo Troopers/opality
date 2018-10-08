@@ -56,13 +56,13 @@ class Responsibility
     /**
      * @ORM\ManyToMany(targetEntity="App\Entity\Goal", inversedBy="responsibilities")
      */
-    private $Goals;
+    private $goals;
 
     public function __construct()
     {
         $this->leaderInvolvements = new ArrayCollection();
         $this->advisorInvolvements = new ArrayCollection();
-        $this->Goals = new ArrayCollection();
+        $this->goals = new ArrayCollection();
     }
 
     /**
@@ -193,13 +193,13 @@ class Responsibility
      */
     public function getGoals(): Collection
     {
-        return $this->Goals;
+        return $this->goals;
     }
 
     public function addGoal(Goal $goal): self
     {
-        if (!$this->Goals->contains($goal)) {
-            $this->Goals[] = $goal;
+        if (!$this->goals->contains($goal)) {
+            $this->goals[] = $goal;
         }
 
         return $this;
@@ -207,8 +207,8 @@ class Responsibility
 
     public function removeGoal(Goal $goal): self
     {
-        if ($this->Goals->contains($goal)) {
-            $this->Goals->removeElement($goal);
+        if ($this->goals->contains($goal)) {
+            $this->goals->removeElement($goal);
         }
 
         return $this;

@@ -9,11 +9,11 @@ App\Entity\LeaderInvolvement:
         responsibility: '@responsibility*'
     leaderInvolvement_responsibility_leny_googleSuiteManager:
         user: '@user_leny'
-        mentalCharge: "minor"
-        timeConsumator: "medium"
-        anxiety: "minor"
-        palatability: "minor"
-        toughness: "minor"
+        mentalCharge: "2"
+        timeConsumator: "1"
+        anxiety: "2"
+        palatability: "2"
+        toughness: "2"
         responsibility: '@responsibility_leny_googleSuiteManager'
 
 App\Entity\AdvisorInvolvement:

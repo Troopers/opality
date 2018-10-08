@@ -40,7 +40,7 @@ class DynamicTranslations implements TranslationContainerInterface
             }
         }
         foreach (DegreeConfidenceType::getValues() as $label => $value) {
-            $messages[] = new Message(sprintf('admin.degree.confidence.emojiOnly.%s', $label));
+            $messages[] = new Message(sprintf('degree.confidence.emojiOnly.%s', $label));
         }
 
         return $messages;

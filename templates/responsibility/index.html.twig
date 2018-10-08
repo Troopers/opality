@@ -1,0 +1,113 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ parent() }}{% endblock %}
+
+{% block body %}
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm">
+                <br/>
+                <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                    {% for user in users %}
+                    <a class="nav-link {% if loop.first %}active{% endif %}" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-{{ user.id }}" role="tab" aria-controls="v-pills-{{ user.id }}" aria-selected="{{ loop.first ? 'true' : 'false' }}">
+                        {{ user }}
+                    </a>
+                    {% endfor %}
+                </div>
+            </div>
+            <div class="col-sm">
+                <br/>
+                <div class="tab-content" id="v-pills-tabContent">
+                    {% for user in users %}
+                        <div class="tab-pane fade {% if loop.first %}show active{% endif %}" id="v-pills-{{ user.id }}" role="tabpanel" aria-labelledby="v-pills-{{ user.id }}-tab">
+                            <ul class="list-group list-group-flush">
+                                {% for involvement in user.leaderInvolvements %}
+                                    <li class="list-group-item">
+                                        <a href="{{ path('easyadmin', {
+                                            'id': involvement.responsibility.id,
+                                            'action': 'edit',
+                                            'entity': 'Responsibility'
+                                        }) }}">
+                                            {% include 'admin/criticality.html.twig' with {'value': involvement.responsibility.criticality} %}
+                                            {{ involvement.responsibility }}
+                                        </a>
+                                        <div>
+                                            {% if involvement.mentalCharge != constant('App\\DBAL\\Types\\CriticalityType::MINOR') %}
+                                                <i class="em em-exploding_head" title="{{ 'leaderInvolvement.mentalCharge'|trans }}"></i>
+                                            {% endif %}
+                                            {% if involvement.timeConsumator != constant('App\\DBAL\\Types\\CriticalityType::MINOR') %}
+                                                <i class="em em-mantelpiece_clock" title="{{ 'leaderInvolvement.timeConsumator'|trans }}"></i>
+                                            {% endif %}
+                                            {% if involvement.anxiety != constant('App\\DBAL\\Types\\CriticalityType::MINOR') %}
+                                                <i class="em em-fearful" title="{{ 'leaderInvolvement.anxiety'|trans }}"></i>
+                                            {% endif %}
+                                            {% if involvement.palatability != constant('App\\DBAL\\Types\\CriticalityType::MINOR') %}
+                                                <i class="em em-heart" title="{{ 'leaderInvolvement.palatability'|trans }}"></i>
+                                            {% endif %}
+                                            {% if involvement.toughness != constant('App\\DBAL\\Types\\CriticalityType::MINOR') %}
+                                                <i class="em em-cold_sweat" title="{{ 'leaderInvolvement.toughness'|trans }}"></i>
+                                            {% endif %}
+                                        </div>
+
+
+                                    </li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+            <div class="col-sm">
+                <br/>
+                <div class="card">
+                    <div class="card-header">
+                        <h5 class="card-title">
+                            Responsabilités orphelines 😢
+                        </h5>
+                    </div>
+                    <ul class="list-group list-group-flush">
+                        {% for responsibility in responsibilitiesWithoutLeadership %}
+                            <li class="list-group-item">
+                                <a href="{{ path('easyadmin', {
+                                    'id': responsibility.id,
+                                    'action': 'edit',
+                                    'entity': 'Responsibility'
+                                }) }}">
+                                    {% include 'admin/criticality.html.twig' with {'value': responsibility.criticality} %}
+                                    {{ responsibility }}
+                                </a>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+                <br/>
+                <div class="card">
+                    <div class="card-header">
+                        <h5>Responsabilités sans conseillers</h5>
+                    </div>
+                    <ul class="list-group list-group-flush">
+                        {% for responsibility in responsibilitiesWithoutAdvisors %}
+                            <li class="list-group-item">
+                                <a href="{{ path('easyadmin', {
+                                    'id': responsibility.id,
+                                    'action': 'edit',
+                                    'entity': 'Responsibility'
+                                }) }}">
+                                    {{ responsibility }}&nbsp;
+                                    <span class="badge badge-dark">
+                                        {{ responsibility.criticality }}
+                                    </span>
+                                </a>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    <script src="{{ asset('build/responsibilities.js') }}"></script>
+{% endblock %}

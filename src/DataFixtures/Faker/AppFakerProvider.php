@@ -9,7 +9,7 @@ use App\DBAL\Types\RecurrenceType;
 
 class AppFakerProvider
 {
-    public static function criticality(): ?string
+    public static function criticality(): ?int
     {
         return static::pickInArray(array_flip(CriticalityType::getChoices()));
     }
