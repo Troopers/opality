@@ -11,10 +11,19 @@ use Gedmo\Timestampable\Traits\TimestampableEntity;
 use Symfony\Component\Validator\Constraints as Assert;
 
 /**
- * @ApiResource()
- * @ORM\Entity(repositoryClass="App\Repository\GoalRepository")
+ * @ApiResource(
+ *    collectionOperations={
+ *        "get",
+ *        "filterByUsers"={
+ *            "method"="GET",
+ *            "route_name"="api_objective_filterByUser",
+ *            "controller"=APIObjectiveController::class
+ *        }
+ *     }
+ * )
+ * @ORM\Entity(repositoryClass="App\Repository\ObjectiveRepository")
  */
-class Goal
+class Objective
 {
     use TimestampableEntity;
 
@@ -43,31 +52,26 @@ class Goal
 
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
-     * @Assert\NotNull(message="goal.measurable")
+     * @Assert\NotNull(message="objective.measurable")
      */
     private $measurement;
 
     /**
      * @ORM\Column(type="boolean")
-     * @Assert\NotEqualTo(value="0", message="goal.attainable")
+     * @Assert\NotEqualTo(value="0", message="objective.attainable")
      */
     private $attainable;
 
     /**
      * @ORM\Column(type="boolean", nullable=true)
-     * @Assert\NotEqualTo(value="0", message="goal.ambitious")
+     * @Assert\NotEqualTo(value="0", message="objective.ambitious")
      */
     private $ambitious;
 
     /**
-     * @ORM\ManyToMany(targetEntity="App\Entity\CoreValue", inversedBy="goals")
-     */
-    private $coreValues;
-
-    /**
      * @ORM\Column(type="boolean")
      */
-    private $accomplished;
+    private $accomplished = false;
 
     /**
      * @ORM\Column(type="date", nullable=true)
@@ -80,34 +84,39 @@ class Goal
     private $recurrence;
 
     /**
-     * @ORM\OneToMany(targetEntity="App\Entity\GoalEvaluation", mappedBy="goal", orphanRemoval=true)
+     * @ORM\OneToMany(targetEntity="App\Entity\ObjectiveEvaluation", mappedBy="objective", orphanRemoval=true)
      */
     private $evaluations;
 
     /**
-     * @ORM\ManyToMany(targetEntity="App\Entity\Responsibility", mappedBy="goals")
+     * @ORM\ManyToMany(targetEntity="App\Entity\Responsibility", mappedBy="objectives")
      */
     private $responsibilities;
 
     /**
-     * @ORM\ManyToOne(targetEntity="App\Entity\Goal", inversedBy="children")
+     * @ORM\ManyToOne(targetEntity="App\Entity\Objective", inversedBy="children")
      */
     private $parent;
 
     /**
-     * @ORM\OneToMany(targetEntity="App\Entity\Goal", mappedBy="parent")
+     * @ORM\OneToMany(targetEntity="App\Entity\Objective", mappedBy="parent")
      */
     private $children;
 
     /**
-     * @ORM\ManyToMany(targetEntity="App\Entity\User", inversedBy="goals")
+     * @ORM\ManyToMany(targetEntity="App\Entity\User", inversedBy="objectives")
      */
     private $users;
 
     /**
-     * @ORM\ManyToMany(targetEntity="App\Entity\Team", inversedBy="goals")
+     * @ORM\ManyToMany(targetEntity="App\Entity\Team", inversedBy="objectives")
      */
     private $teams;
+
+    /**
+     * @ORM\ManyToMany(targetEntity="App\Entity\Commitment", mappedBy="objectives")
+     */
+    private $commitments;
 
     public function __toString()
     {
@@ -116,12 +125,12 @@ class Goal
 
     public function __construct()
     {
-        $this->coreValues = new ArrayCollection();
         $this->evaluations = new ArrayCollection();
         $this->responsibilities = new ArrayCollection();
         $this->children = new ArrayCollection();
         $this->users = new ArrayCollection();
         $this->teams = new ArrayCollection();
+        $this->commitments = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -189,32 +198,6 @@ class Goal
         return $this;
     }
 
-    /**
-     * @return Collection|CoreValue[]
-     */
-    public function getCoreValues(): Collection
-    {
-        return $this->coreValues;
-    }
-
-    public function addCoreValue(CoreValue $coreValue): self
-    {
-        if (!$this->coreValues->contains($coreValue)) {
-            $this->coreValues[] = $coreValue;
-        }
-
-        return $this;
-    }
-
-    public function removeCoreValue(CoreValue $coreValue): self
-    {
-        if ($this->coreValues->contains($coreValue)) {
-            $this->coreValues->removeElement($coreValue);
-        }
-
-        return $this;
-    }
-
     public function getAccomplished(): ?bool
     {
         return $this->accomplished;
@@ -252,30 +235,30 @@ class Goal
     }
 
     /**
-     * @return Collection|GoalEvaluation[]
+     * @return Collection|ObjectiveEvaluation[]
      */
     public function getEvaluations(): Collection
     {
         return $this->evaluations;
     }
 
-    public function addEvaluation(GoalEvaluation $evaluation): self
+    public function addEvaluation(ObjectiveEvaluation $evaluation): self
     {
         if (!$this->evaluations->contains($evaluation)) {
             $this->evaluations[] = $evaluation;
-            $evaluation->setGoal($this);
+            $evaluation->setObjective($this);
         }
 
         return $this;
     }
 
-    public function removeEvaluation(GoalEvaluation $evaluation): self
+    public function removeEvaluation(ObjectiveEvaluation $evaluation): self
     {
         if ($this->evaluations->contains($evaluation)) {
             $this->evaluations->removeElement($evaluation);
             // set the owning side to null (unless already changed)
-            if ($evaluation->getGoal() === $this) {
-                $evaluation->setGoal(null);
+            if ($evaluation->getObjective() === $this) {
+                $evaluation->setObjective(null);
             }
         }
 
@@ -294,7 +277,7 @@ class Goal
     {
         if (!$this->responsibilities->contains($responsibility)) {
             $this->responsibilities[] = $responsibility;
-            $responsibility->addGoal($this);
+            $responsibility->addObjective($this);
         }
 
         return $this;
@@ -304,7 +287,7 @@ class Goal
     {
         if ($this->responsibilities->contains($responsibility)) {
             $this->responsibilities->removeElement($responsibility);
-            $responsibility->removeGoal($this);
+            $responsibility->removeObjective($this);
         }
 
         return $this;
@@ -328,14 +311,14 @@ class Goal
     }
 
     /**
-     * @return Collection|Goal[]
+     * @return Collection|Objective[]
      */
     public function getChildren(): Collection
     {
         return $this->children;
     }
 
-    public function addChild(Goal $child): self
+    public function addChild(Objective $child): self
     {
         if (!$this->children->contains($child)) {
             $this->children[] = $child;
@@ -345,7 +328,7 @@ class Goal
         return $this;
     }
 
-    public function removeChild(Goal $child): self
+    public function removeChild(Objective $child): self
     {
         if ($this->children->contains($child)) {
             $this->children->removeElement($child);
@@ -405,6 +388,34 @@ class Goal
     {
         if ($this->teams->contains($team)) {
             $this->teams->removeElement($team);
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|Commitment[]
+     */
+    public function getCommitments(): Collection
+    {
+        return $this->commitments;
+    }
+
+    public function addCommitment(Commitment $commitment): self
+    {
+        if (!$this->commitments->contains($commitment)) {
+            $this->commitments[] = $commitment;
+            $commitment->addObjective($this);
+        }
+
+        return $this;
+    }
+
+    public function removeCommitment(Commitment $commitment): self
+    {
+        if ($this->commitments->contains($commitment)) {
+            $this->commitments->removeElement($commitment);
+            $commitment->removeObjective($this);
         }
 
         return $this;

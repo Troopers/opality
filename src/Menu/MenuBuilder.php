@@ -23,15 +23,18 @@ class MenuBuilder
     {
         $menu = $this->factory->createItem('root');
 
-        $menu->addChild('app.menu.goals', ['uri' => '#']);
-        $menu->addChild('app.menu.roles', ['uri' => '#']);
+        $menu->addChild('app.menu.commitments', ['route' => 'commitment_index']);
+        $menu->addChild('app.menu.objectives', ['route' => 'objective_diagram']);
+        $menu->addChild('app.menu.roles', ['route' => 'responsibility']);
+        /*
         $menu->addChild('app.menu.kudos', ['uri' => '#']);
         $visualizationItem = $menu->addChild('app.menu.visualization', ['uri' => '#']);
         $visualizationItem->addChild('app.menu.visualization.organizationChart', ['uri' => '#']);
         $visualizationItem->addChild('app.menu.visualization.botleneck', ['uri' => '#']);
         $visualizationItem->addChild('app.menu.visualization.blooming', ['uri' => '#']);
         $this->makeItDropdown($visualizationItem);
-        $menu->addChild('app.menu.meeting', ['uri' => '#']);
+        $menu->addChild('app.menu.meeting', ['route' => 'meeting_index']);
+        */
         $menu->setChildrenAttribute('class', 'nav');
 
         // menu items

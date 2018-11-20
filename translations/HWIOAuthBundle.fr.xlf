@@ -6,17 +6,10 @@
       <note>The source node in most cases contains the sample message as written by the developer. If it looks like a dot-delimitted string such as "form.label.firstname", then the developer has not provided a default message.</note>
     </header>
     <body>
-      <trans-unit id="99de864529fbf42dc86bf34bb9101f93804b150d" resname="objective.ambitious">
-        <source>objective.ambitious</source>
-        <target>Un objectif doit être ambitieux.</target>
-      </trans-unit>
-      <trans-unit id="ef386d55e287b97febd165395a3b1107799f0910" resname="objective.attainable">
-        <source>objective.attainable</source>
-        <target>Un objectif doit être réalisable, atteignable.</target>
-      </trans-unit>
-      <trans-unit id="1554e82a70041ea394fa6f1136f2433a5e4f7dbd" resname="objective.measurable">
-        <source>objective.measurable</source>
-        <target>Un objectif doit être mesurable.</target>
+      <trans-unit id="322f31631de66bcf71bd6c199b41606d516fe3f9" resname="gitlab">
+        <source>gitlab</source>
+        <target>gitlab</target>
+        <jms:reference-file line="19">/../templates/security/login.html.twig</jms:reference-file>
       </trans-unit>
     </body>
   </file>

@@ -17,8 +17,9 @@ Encore
      * Each entry will result in one JavaScript file (e.g. app.js)
      * and one CSS file (e.g. app.css) if you JavaScript imports CSS.
      */
-    .addEntry('app', './assets/js/app.js')
+    .addEntry('app', './assets/app/js/app.js')
     .addEntry('admin', './assets/js/admin.js')
+    .addEntry('commitment', './assets/app/js/commitment/app.jsx')
     //.addEntry('page1', './assets/js/page1.js')
     //.addEntry('page2', './assets/js/page2.js')
 
@@ -43,6 +44,12 @@ Encore
 
     // uncomment if you're having problems with a jQuery plugin
     .autoProvidejQuery()
+    .enableReactPreset()
+    .enablePostCssLoader(function(options) {
+        options.config = {
+            path: 'postcss.config.js'
+        };
+    })
 ;
 
 module.exports = Encore.getWebpackConfig();
