@@ -1,0 +1,5 @@
+App\Entity\Commitment:
+    commitment_{1..20}:
+        name: <sentence(7)>
+    commitment_deadline:
+        name: <sentence(7)>

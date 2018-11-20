@@ -18,7 +18,8 @@ class DynamicTranslations implements TranslationContainerInterface
     public static function getTranslationMessages()
     {
         $messages = [
-            new Message('app.menu.goals'),
+            new Message('app.menu.commitments'),
+            new Message('app.menu.objectives'),
             new Message('app.menu.roles'),
             new Message('app.menu.kudos'),
             new Message('app.menu.visualization'),

@@ -3,31 +3,39 @@ App\Entity\CoreValue:
         name: "Fierté"
         color: 2e243f
         mantra: <sentence()>
+        commitments: '<numberBetween(0,4)>x @commitment_*'
     coreValue_smart:
         name: "Intélligence"
         color: 5fafe2
         mantra: <sentence()>
+        commitments: '<numberBetween(0,4)>x @commitment_*'
     coreValue_boldness:
         name: "Audace"
         color: e26466
         mantra: <sentence()>
+        commitments: '<numberBetween(0,4)>x @commitment_*'
     coreValue_transparency:
         name: "Transparence"
         color: f4a15f
         mantra: <sentence()>
+        commitments: '<numberBetween(0,4)>x @commitment_*'
     coreValue_share:
         name: "Partage"
         color: 4fb28f
         mantra: <sentence()>
+        commitments: '<numberBetween(0,4)>x @commitment_*'
     coreValue_trust:
         name: "Confiance"
         color: 2e243f
         mantra: <sentence()>
+        commitments: '<numberBetween(0,4)>x @commitment_*'
     coreValue_honesty:
         name: "Honneteté"
         color: 2e243f
         mantra: <sentence()>
+        commitments: '<numberBetween(0,4)>x @commitment_*'
     coreValue_kindness:
         name: "Bienveillance"
         color: 5fafe2
         mantra: <sentence()>
+        commitments: '<numberBetween(0,4)>x @commitment_*'

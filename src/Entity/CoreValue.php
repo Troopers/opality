@@ -10,7 +10,16 @@ use Doctrine\ORM\Mapping as ORM;
 use Gedmo\Timestampable\Traits\TimestampableEntity;
 
 /**
- * @ApiResource()
+ * @ApiResource(
+ *    collectionOperations={
+ *        "get",
+ *        "filterByObjectiveUsers"={
+ *            "method"="GET",
+ *            "route_name"="api_coreValue_filterByObjectiveUsersOrTeams",
+ *            "controller"=APICoreValueController::class
+ *        }
+ *     }
+ * )
  * @ORM\Entity(repositoryClass="App\Repository\CoreValueRepository")
  */
 class CoreValue
@@ -46,23 +55,23 @@ class CoreValue
     private $color;
 
     /**
-     * @ORM\ManyToMany(targetEntity="App\Entity\Goal", mappedBy="coreValues")
-     */
-    private $goals;
-
-    /**
      * @ORM\Column(type="string", length=255, nullable=true)
      */
     private $mantra;
 
+    /**
+     * @ORM\ManyToMany(targetEntity="App\Entity\Commitment", mappedBy="coreValues")
+     */
+    private $commitments;
+
     public function __construct()
     {
-        $this->goals = new ArrayCollection();
+        $this->commitments = new ArrayCollection();
     }
 
     public function __toString()
     {
-        return $this->getName();
+        return (string) $this->getName();
     }
 
     public function getId(): ?int
@@ -106,34 +115,6 @@ class CoreValue
         return $this;
     }
 
-    /**
-     * @return Collection|Goal[]
-     */
-    public function getGoals(): Collection
-    {
-        return $this->goals;
-    }
-
-    public function addGoal(Goal $goal): self
-    {
-        if (!$this->goals->contains($goal)) {
-            $this->goals[] = $goal;
-            $goal->addCoreValue($this);
-        }
-
-        return $this;
-    }
-
-    public function removeGoal(Goal $goal): self
-    {
-        if ($this->goals->contains($goal)) {
-            $this->goals->removeElement($goal);
-            $goal->removeCoreValue($this);
-        }
-
-        return $this;
-    }
-
     public function getMantra(): ?string
     {
         return $this->mantra;
@@ -149,5 +130,33 @@ class CoreValue
     public function getSlug()
     {
         return $this->slug;
+    }
+
+    /**
+     * @return Collection|Commitment[]
+     */
+    public function getCommitments(): Collection
+    {
+        return $this->commitments;
+    }
+
+    public function addCommitment(Commitment $commitment): self
+    {
+        if (!$this->commitments->contains($commitment)) {
+            $this->commitments[] = $commitment;
+            $commitment->addCoreValue($this);
+        }
+
+        return $this;
+    }
+
+    public function removeCommitment(Commitment $commitment): self
+    {
+        if ($this->commitments->contains($commitment)) {
+            $this->commitments->removeElement($commitment);
+            $commitment->removeCoreValue($this);
+        }
+
+        return $this;
     }
 }

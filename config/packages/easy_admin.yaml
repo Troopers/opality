@@ -9,9 +9,11 @@ easy_admin:
                 - 'https://afeld.github.io/emoji-css/emoji.css'
                 - 'https://fonts.googleapis.com/css?family=Montserrat'
         menu:
-        - { label: 'admin.menu.goal', entity: 'Goal', icon: ' em em-muscle' }
-        - { label: 'admin.menu.goalEvaluation', entity: 'GoalEvaluation', icon: ' em em-100' }
+        - { label: 'admin.menu.ultimateGoals', entity: 'UltimateGoal', icon: ' em em-angel' }
         - { label: 'admin.menu.coreValue', entity: 'CoreValue', icon: ' em em-heart' }
+        - { label: 'admin.menu.commitment', entity: 'Commitment', icon: ' em em-fist' }
+        - { label: 'admin.menu.objective', entity: 'Objective', icon: ' em em-muscle' }
+        - { label: 'admin.menu.objectiveEvaluation', entity: 'ObjectiveEvaluation', icon: ' em em-100' }
         - { label: 'admin.menu.responsibility', entity: 'Responsibility', icon: ' em em-point_up' }
         - { label: 'admin.menu.meeting', entity: 'Meeting', icon: ' em em-speech_balloon' }
         - { label: 'admin.menu.users', entity: 'User', icon: ' em em-bust_in_silhouette' }
@@ -28,54 +30,70 @@ easy_admin:
                     - { property: 'name', label: 'admin.core_value.name' }
                     - { property: 'description', label: 'admin.core_value.description' }
                     - { property: 'color', label: 'admin.core_value.color', template: 'admin/color.html.twig' }
-                    - { property: 'goals', label: 'admin.core_value.goals' }
+                    - { property: 'commitments', label: 'admin.core_value.commitments' }
             form:
                 fields:
                     - { property: 'name', label: 'admin.core_value.name' }
                     - { property: 'description', label: 'admin.core_value.description' }
                     - { property: 'mantra', label: 'admin.core_value.mantra' }
                     - { property: 'color', label: 'admin.core_value.color' }
-                    - { property: 'goals', label: 'admin.core_value.goals' }
-        GoalEvaluation:
-            class: 'App\Entity\GoalEvaluation'
+                    - { property: 'commitments', label: 'admin.core_value.commitments' }
+        ObjectiveEvaluation:
+            class: 'App\Entity\ObjectiveEvaluation'
             list:
-                label: 'admin.goalEvaluation'
+                label: 'admin.objectiveEvaluation'
                 fields:
-                    - { property: 'id', label: 'admin.goalEvaluation.id' }
-                    - { property: 'goal', label: 'admin.goalEvaluation.goal' }
+                    - { property: 'id', label: 'admin.objectiveEvaluation.id' }
+                    - { property: 'objective', label: 'admin.objectiveEvaluation.objective' }
                     - { property: 'user', label: 'admin.userEvaluation.user' }
-                    - { property: 'value', label: 'admin.goalEvaluation.value' }
-                    - { property: 'confidence', label: 'admin.goalEvaluation.confidence', template: 'admin/confidence.html.twig' }
+                    - { property: 'value', label: 'admin.objectiveEvaluation.value' }
+                    - { property: 'confidence', label: 'admin.objectiveEvaluation.confidence', template: 'admin/confidence.html.twig' }
             form:
                 fields:
-                    - { property: 'value', label: 'admin.goalEvaluation.value' }
-                    - { property: 'confidence', label: 'admin.goalEvaluation.confidence', template: 'admin/confidence.html.twig' }
-                    - { property: 'goal', label: 'admin.goalEvaluation.goal' }
+                    - { property: 'value', label: 'admin.objectiveEvaluation.value' }
+                    - { property: 'confidence', label: 'admin.objectiveEvaluation.confidence', template: 'admin/confidence.html.twig' }
+                    - { property: 'objective', label: 'admin.objectiveEvaluation.objective' }
                     - { property: 'user', label: 'admin.userEvaluation.user' }
-        Goal:
-            class: 'App\Entity\Goal'
-            label: 'admin.goal'
+        Objective:
+            class: 'App\Entity\Objective'
+            label: 'admin.objective'
             list:
-                help: 'admin.goal.help'
-                title: 'admin.goal'
+                help: 'admin.objective.help'
+                title: 'admin.objective'
                 fields:
-                    - { property: 'id', label: 'admin.goal.id' }
-                    - { property: 'name', label: 'admin.goal.name' }
-                    - { property: 'coreValues', label: 'admin.goal.coreValues' }
-                    - { property: 'parent', label: 'admin.goal.parent' }
-                    - { property: 'plannedDate', label: 'admin.goal.plannedDate' }
+                    - { property: 'id', label: 'admin.objective.id' }
+                    - { property: 'name', label: 'admin.objective.name' }
+                    - { property: 'commitments', label: 'admin.objective.commitments' }
+                    - { property: 'parent', label: 'admin.objective.parent' }
+                    - { property: 'plannedDate', label: 'admin.objective.plannedDate' }
             form:
                 fields:
-                    - { property: 'name', label: 'admin.goal.name' }
-                    - { property: 'recurrence', label: 'admin.goal.recurrence', type: 'App\Form\Type\RecurrenceType' }
-                    - { property: 'description', label: 'admin.goal.description' }
-                    - { property: 'measurement', label: 'admin.goal.measurement', type_options: { required: false } }
-                    - { property: 'attainable', label: 'admin.goal.attainable' }
-                    - { property: 'ambitious', label: 'admin.goal.ambitious' }
-                    - { property: 'parent', label: 'admin.goal.parent' }
-                    - { property: 'plannedDate', label: 'admin.goal.plannedDate' }
-                    - { property: 'user', label: 'admin.goal.user' }
-                    - { property: 'coreValues', label: 'admin.goal.coreValues' }
+                    - { property: 'name', label: 'admin.objective.name' }
+                    - { property: 'recurrence', label: 'admin.objective.recurrence', type: 'App\Form\Type\RecurrenceType' }
+                    - { property: 'description', label: 'admin.objective.description' }
+                    - { property: 'measurement', label: 'admin.objective.measurement', type_options: { required: false } }
+                    - { property: 'attainable', label: 'admin.objective.attainable' }
+                    - { property: 'ambitious', label: 'admin.objective.ambitious' }
+                    - { property: 'parent', label: 'admin.objective.parent' }
+                    - { property: 'plannedDate', label: 'admin.objective.plannedDate' }
+                    - { property: 'users', label: 'admin.objective.users' }
+                    - { property: 'commitments', label: 'admin.objective.commitments' }
+        Commitment:
+            class: 'App\Entity\Commitment'
+            label: 'admin.commitment'
+            list:
+                title: 'admin.commitment'
+                help: 'admin.commitment.help'
+                fields:
+                - { property: 'id', label: 'admin.commitment.id' }
+                - { property: 'name', label: 'admin.commitment.name' }
+                - { property: 'coreValues', label: 'admin.commitment.coreValues' }
+                - { property: 'objectives', label: 'admin.commitment.objectives' }
+            form:
+                fields:
+                - { property: 'name', label: 'admin.commitment.name' }
+                - { property: 'coreValues', label: 'admin.commitment.coreValues' }
+                - { property: 'objectives', label: 'admin.commitment.objectives' }
         Responsibility:
             class: 'App\Entity\Responsibility'
             label: 'admin.responsibility'
@@ -143,6 +161,9 @@ easy_admin:
                 title: 'admin.meeting'
         Kuky:
             class: 'App\Entity\Kuky'
+        UltimateGoal:
+            class: 'App\Entity\UltimateGoal'
+            label: 'admin.ultimateGoal'
         Team:
             class: 'App\Entity\Team'
             list:

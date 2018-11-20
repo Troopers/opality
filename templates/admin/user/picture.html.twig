@@ -1,1 +1,1 @@
-<img src="{{ value|imagine_filter('squared_thumbnail') }}" class="img-circle"/>
+<img src="{{ value|imagine_filter('squared_thumbnail') }}" class="img-circle" {% if title|default(false) %}title="{{ title }}"{% endif %}/>

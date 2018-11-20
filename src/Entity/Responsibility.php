@@ -54,15 +54,15 @@ class Responsibility
     private $advisorInvolvements;
 
     /**
-     * @ORM\ManyToMany(targetEntity="App\Entity\Goal", inversedBy="responsibilities")
+     * @ORM\ManyToMany(targetEntity="App\Entity\Objective", inversedBy="responsibilities")
      */
-    private $goals;
+    private $objectives;
 
     public function __construct()
     {
         $this->leaderInvolvements = new ArrayCollection();
         $this->advisorInvolvements = new ArrayCollection();
-        $this->goals = new ArrayCollection();
+        $this->objectives = new ArrayCollection();
     }
 
     /**
@@ -189,26 +189,26 @@ class Responsibility
     }
 
     /**
-     * @return Collection|Goal[]
+     * @return Collection|Objective[]
      */
-    public function getGoals(): Collection
+    public function getObjectives(): Collection
     {
-        return $this->goals;
+        return $this->objectives;
     }
 
-    public function addGoal(Goal $goal): self
+    public function addObjective(Objective $objective): self
     {
-        if (!$this->goals->contains($goal)) {
-            $this->goals[] = $goal;
+        if (!$this->objectives->contains($objective)) {
+            $this->objectives[] = $objective;
         }
 
         return $this;
     }
 
-    public function removeGoal(Goal $goal): self
+    public function removeObjective(Objective $objective): self
     {
-        if ($this->goals->contains($goal)) {
-            $this->goals->removeElement($goal);
+        if ($this->objectives->contains($objective)) {
+            $this->objectives->removeElement($objective);
         }
 
         return $this;

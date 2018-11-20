@@ -1,0 +1,35 @@
+App\Entity\Objective:
+    objective_{1..50}:
+        name: <sentence(7)>
+        description: <text()>
+        measurement: <text()>
+        attainable: true
+        ambitious: true
+        accomplished: '3%? 1 : 0'
+        plannedDate: <dateTimeBetween('now', '1 year')>
+        recurrence: <recurrence()>
+        responsibilities: '<numberBetween(0,3)>x @responsibility_*'
+        commitments: '<numberBetween(1, 2)>x @commitment*'
+        parent: '80%? @objective_*'
+        users: '<numberBetween(0, 5)>x @user_*'
+        teams: '<numberBetween(0, 1)>x @team_*'
+    objective_leny_1:
+        name: Participer au débat public sur l'entreprise libérée
+        commitments: '<numberBetween(1, 2)>x @commitment*'
+        attainable: true
+    objective_leny_2:
+        name: Être présent dans le monde associatif local
+        commitments: '<numberBetween(1, 2)>x @commitment*'
+        attainable: true
+    objective_leny_3:
+        name: Développer en continu les outils organisationnels de l'agence
+        commitments: '<numberBetween(1, 2)>x @commitment*'
+        attainable: true
+    objective_leny_4:
+        name: Participer aux réponses commerciales
+        commitments: '<numberBetween(1, 2)>x @commitment*'
+        attainable: true
+    objective_leny_5:
+        name: Être garant du respect de la Raison d'être Évolutive et de l'application de l'entreprise libérée
+        commitments: '<numberBetween(1, 2)>x @commitment*'
+        attainable: true

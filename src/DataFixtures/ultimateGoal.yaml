@@ -1,0 +1,13 @@
+App\Entity\UltimateGoal:
+    ultimateGoal_global:
+        title: <sentence(7)>
+        description: <text()>
+    ultimateGoal_{1..10}:
+        title: <sentence(7)>
+        description: <text()>
+        user: '@user_<current()>'
+    ultimateGoal_Leny:
+        title: <sentence(7)>
+        description: <text()>
+        user: '@user_leny'
+

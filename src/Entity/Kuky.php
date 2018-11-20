@@ -44,6 +44,14 @@ class Kuky
         $this->targets = new ArrayCollection();
     }
 
+    public function __toString()
+    {
+        return sprintf('#%d - %s',
+            $this->getId(),
+            $this->getCreatedAt()->format('d/m/Y')
+        );
+    }
+
     public function getId(): ?int
     {
         return $this->id;

@@ -2,25 +2,25 @@
 
 namespace App\Repository;
 
-use App\Entity\GoalEvaluation;
+use App\Entity\ObjectiveEvaluation;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Symfony\Bridge\Doctrine\RegistryInterface;
 
 /**
- * @method GoalEvaluation|null find($id, $lockMode = null, $lockVersion = null)
- * @method GoalEvaluation|null findOneBy(array $criteria, array $orderBy = null)
- * @method GoalEvaluation[]    findAll()
- * @method GoalEvaluation[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
+ * @method ObjectiveEvaluation|null find($id, $lockMode = null, $lockVersion = null)
+ * @method ObjectiveEvaluation|null findOneBy(array $criteria, array $orderBy = null)
+ * @method ObjectiveEvaluation[]    findAll()
+ * @method ObjectiveEvaluation[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
  */
-class GoalEvaluationRepository extends ServiceEntityRepository
+class ObjectiveEvaluationRepository extends ServiceEntityRepository
 {
     public function __construct(RegistryInterface $registry)
     {
-        parent::__construct($registry, GoalEvaluation::class);
+        parent::__construct($registry, ObjectiveEvaluation::class);
     }
 
 //    /**
-//     * @return GoalEvaluation[] Returns an array of GoalEvaluation objects
+//     * @return ObjectiveEvaluation[] Returns an array of ObjectiveEvaluation objects
 //     */
     /*
     public function findByExampleField($value)
@@ -37,7 +37,7 @@ class GoalEvaluationRepository extends ServiceEntityRepository
     */
 
     /*
-    public function findOneBySomeField($value): ?GoalEvaluation
+    public function findOneBySomeField($value): ?ObjectiveEvaluation
     {
         return $this->createQueryBuilder('g')
             ->andWhere('g.exampleField = :val')

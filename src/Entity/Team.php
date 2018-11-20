@@ -51,15 +51,15 @@ class Team
     private $children;
 
     /**
-     * @ORM\ManyToMany(targetEntity="App\Entity\Goal", mappedBy="teams")
+     * @ORM\ManyToMany(targetEntity="App\Entity\Objective", mappedBy="teams")
      */
-    private $goals;
+    private $objectives;
 
     public function __construct()
     {
         $this->members = new ArrayCollection();
         $this->children = new ArrayCollection();
-        $this->goals = new ArrayCollection();
+        $this->objectives = new ArrayCollection();
     }
 
     public function __toString()
@@ -168,28 +168,28 @@ class Team
     }
 
     /**
-     * @return Collection|Goal[]
+     * @return Collection|Objective[]
      */
-    public function getGoals(): Collection
+    public function getObjectives(): Collection
     {
-        return $this->goals;
+        return $this->objectives;
     }
 
-    public function addGoal(Goal $goal): self
+    public function addObjective(Objective $objective): self
     {
-        if (!$this->goals->contains($goal)) {
-            $this->goals[] = $goal;
-            $goal->addTeam($this);
+        if (!$this->objectives->contains($objective)) {
+            $this->objectives[] = $objective;
+            $objective->addTeam($this);
         }
 
         return $this;
     }
 
-    public function removeGoal(Goal $goal): self
+    public function removeObjective(Objective $objective): self
     {
-        if ($this->goals->contains($goal)) {
-            $this->goals->removeElement($goal);
-            $goal->removeTeam($this);
+        if ($this->objectives->contains($objective)) {
+            $this->objectives->removeElement($objective);
+            $objective->removeTeam($this);
         }
 
         return $this;

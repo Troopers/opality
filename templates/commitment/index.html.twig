@@ -1,0 +1,29 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ 'app.commitments.title'|trans }}{% endblock %}
+
+{% block body %}
+    <div class="no-gutters">
+        <h1>{{ block('title') }}</h1>
+        <div class="row flex-xl-nowrap no-gutters">
+            <div class="col">
+                <div id="root"></div>
+                <script>
+                    var coreValues = {{ coreValues|json_encode|raw }};
+                </script>
+                <script>
+                    var users = {{ users|json_encode|raw }};
+                </script>
+                <script>
+                    var teams = {{ teams|json_encode|raw }};
+                </script>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+
+{% block javascripts %}
+    {{ parent() }}
+    <script src="{{ asset('build/commitment.js') }}"></script>
+{% endblock %}

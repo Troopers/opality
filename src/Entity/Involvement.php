@@ -29,4 +29,13 @@ class Involvement
     {
         return $this->id;
     }
+
+    public function __toString()
+    {
+        return sprintf('#%d - %s - %s',
+            $this->getId(),
+            $this->getUser(),
+            $this->getResponsibility()
+        );
+    }
 }

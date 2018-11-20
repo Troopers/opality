@@ -77,14 +77,14 @@ class User implements UserInterface
     private $teams;
 
     /**
-     * @ORM\ManyToMany(targetEntity="App\Entity\Goal", mappedBy="users")
+     * @ORM\ManyToMany(targetEntity="App\Entity\Objective", mappedBy="users")
      */
-    private $goals;
+    private $objectives;
 
     /**
-     * @ORM\OneToMany(targetEntity="App\Entity\GoalEvaluation", mappedBy="user")
+     * @ORM\OneToMany(targetEntity="App\Entity\ObjectiveEvaluation", mappedBy="user")
      */
-    private $goalEvaluations;
+    private $objectiveEvaluations;
 
     /**
      * @ORM\OneToMany(targetEntity="App\Entity\Kuky", mappedBy="author")
@@ -106,19 +106,29 @@ class User implements UserInterface
      */
     private $advisorInvolvements;
 
+    /**
+     * @ORM\OneToOne(targetEntity="App\Entity\UltimateGoal", mappedBy="user", cascade={"persist", "remove"})
+     */
+    private $ultimateGoal;
+
     public function __construct()
     {
         $this->meetings = new ArrayCollection();
         $this->teams = new ArrayCollection();
-        $this->goals = new ArrayCollection();
-        $this->goalEvaluations = new ArrayCollection();
+        $this->objectives = new ArrayCollection();
+        $this->objectiveEvaluations = new ArrayCollection();
         $this->givenKukies = new ArrayCollection();
         $this->receivedKukies = new ArrayCollection();
     }
 
-    public function __toString(): ?string
+    public function __toString(): string
     {
-        return $this->firstname . ' '. $this->lastname;
+        return $this->getFullName();
+    }
+
+    public function getFullName(): string
+    {
+        return (string) $this->firstname . ' '. $this->lastname;
     }
 
     public function getId(): ?int
@@ -325,58 +335,58 @@ class User implements UserInterface
     }
 
     /**
-     * @return Collection|Goal[]
+     * @return Collection|Objective[]
      */
-    public function getGoals(): Collection
+    public function getObjectives(): Collection
     {
-        return $this->goals;
+        return $this->objectives;
     }
 
-    public function addGoal(Goal $goal): self
+    public function addObjective(Objective $objective): self
     {
-        if (!$this->goals->contains($goal)) {
-            $this->goals[] = $goal;
-            $goal->addUser($this);
+        if (!$this->objectives->contains($objective)) {
+            $this->objectives[] = $objective;
+            $objective->addUser($this);
         }
 
         return $this;
     }
 
-    public function removeGoal(Goal $goal): self
+    public function removeObjective(Objective $objective): self
     {
-        if ($this->goals->contains($goal)) {
-            $this->goals->removeElement($goal);
-            $goal->removeUser($this);
+        if ($this->objectives->contains($objective)) {
+            $this->objectives->removeElement($objective);
+            $objective->removeUser($this);
         }
 
         return $this;
     }
 
     /**
-     * @return Collection|GoalEvaluation[]
+     * @return Collection|ObjectiveEvaluation[]
      */
-    public function getGoalEvaluations(): Collection
+    public function getObjectiveEvaluations(): Collection
     {
-        return $this->goalEvaluations;
+        return $this->objectiveEvaluations;
     }
 
-    public function addGoalEvaluation(GoalEvaluation $goalEvaluation): self
+    public function addObjectiveEvaluation(ObjectiveEvaluation $objectiveEvaluation): self
     {
-        if (!$this->goalEvaluations->contains($goalEvaluation)) {
-            $this->goalEvaluations[] = $goalEvaluation;
-            $goalEvaluation->setUser($this);
+        if (!$this->objectiveEvaluations->contains($objectiveEvaluation)) {
+            $this->objectiveEvaluations[] = $objectiveEvaluation;
+            $objectiveEvaluation->setUser($this);
         }
 
         return $this;
     }
 
-    public function removeGoalEvaluation(GoalEvaluation $goalEvaluation): self
+    public function removeObjectiveEvaluation(ObjectiveEvaluation $objectiveEvaluation): self
     {
-        if ($this->goalEvaluations->contains($goalEvaluation)) {
-            $this->goalEvaluations->removeElement($goalEvaluation);
+        if ($this->objectiveEvaluations->contains($objectiveEvaluation)) {
+            $this->objectiveEvaluations->removeElement($objectiveEvaluation);
             // set the owning side to null (unless already changed)
-            if ($goalEvaluation->getUser() === $this) {
-                $goalEvaluation->setUser(null);
+            if ($objectiveEvaluation->getUser() === $this) {
+                $objectiveEvaluation->setUser(null);
             }
         }
 
@@ -456,5 +466,17 @@ class User implements UserInterface
     public function getAdvisorInvolvements()
     {
         return $this->advisorInvolvements;
+    }
+
+    public function getUltimateGoal(): ?UltimateGoal
+    {
+        return $this->ultimateGoal;
+    }
+
+    public function setUltimateGoal(?UltimateGoal $ultimateGoal): self
+    {
+        $this->ultimateGoal = $ultimateGoal;
+
+        return $this;
     }
 }
