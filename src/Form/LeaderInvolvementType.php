@@ -12,23 +12,23 @@ class LeaderInvolvementType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
+            ->add('user', null, [
+                'label' => 'leaderInvolvement.user'
+            ])
             ->add('mentalCharge', null, [
-                'label' => 'form.leaderInvolvement.mentalCharge'
+                'label' => 'leaderInvolvement.mentalCharge'
             ])
             ->add('timeConsumator', null, [
-                'label' => 'form.leaderInvolvement.timeConsumator'
+                'label' => 'leaderInvolvement.timeConsumator'
             ])
             ->add('anxiety', null, [
-                'label' => 'form.leaderInvolvement.anxiety'
+                'label' => 'leaderInvolvement.anxiety'
             ])
             ->add('palatability', null, [
-                'label' => 'form.leaderInvolvement.palatability'
+                'label' => 'leaderInvolvement.palatability'
             ])
             ->add('toughness', null, [
-                'label' => 'form.leaderInvolvement.toughness'
-            ])
-            ->add('user', null, [
-                'label' => 'form.leaderInvolvement.user'
+                'label' => 'leaderInvolvement.toughness'
             ])
         ;
     }

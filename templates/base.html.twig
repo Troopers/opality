@@ -13,7 +13,7 @@
         {% block menu %}
             <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 bg-white border-bottom shadow-sm">
                 <span class="my-0 mr-md-auto" id="header-logo"><img src="{{ asset('images/troopers-square.png')|imagine_filter('squared_thumbnail') }}"/> Trooping</span>
-                <nav id="navbar-example2" class="navbar my-2 my-md-0 mr-md-3">
+                <nav class="navbar my-2 my-md-0 mr-md-3">
                     {{ knp_menu_render('main') }}
                 </nav>
                 {% if is_granted('IS_AUTHENTICATED_FULLY') %}
